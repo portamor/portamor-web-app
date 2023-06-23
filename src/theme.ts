@@ -49,6 +49,7 @@ export const getTheme = (): ThemeOptions => {
     shadows: [
       "none",
       "0px 1px 6px 2px #ecebeb",
+      "0px 1px 6px 2px rgba(0, 0, 0, 0.13)",
       ...Array(22).fill("none"),
     ] as Shadows,
     components: {

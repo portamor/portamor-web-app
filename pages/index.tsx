@@ -17,6 +17,7 @@ import meetings from "@public/icons/ic-meetings.svg";
 import specialists from "@public/icons/ic-specialists.svg";
 import workshops from "@public/icons/ic-workshops.svg";
 import check from "@public/check.svg";
+import { OurMemberShips } from "@src/components/Home/OurMemberships/OurMemberships";
 
 const benefits = [
   {
@@ -137,6 +138,7 @@ export default function Home() {
             ))}
           </Stack>
         </Box>
+        <OurMemberShips/>
         <FormRegister />
         <OurAccomplishments />
       </Container>
