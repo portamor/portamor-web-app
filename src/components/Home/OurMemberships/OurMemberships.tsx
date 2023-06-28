@@ -17,33 +17,39 @@ import heart from "@public/heart.png";
 export const OurMemberShips = () => {
   const memberships = [
     {
-      price: 49,
-      title: "Club Bronce",
+      price: 0,
+      title: "Club Básico",
       details: [
-        "Eventos virtuales en vivo grupales de: \n\n Activacion física, participación social, nutrición y bienestar mental.",
-        "Accesos de talleres de  lanzamiento de emprendimientos innovadores.",
-        "Acceso a eventos de fechas festivas exclusivas según programación",
+        "Acceso limitado  en actividades grupales en línea.",
+        "Contenido educativo básico sobre envejecimiento activo y saludable",
       ],
     },
     {
-      price: 129,
-      title: "Club Oro",
+      price: 49,
+      title: "Club Bronce",
       details: [
-        "Talleres de activacion física, participación social, nutrición y bienestar mental.",
-        "Incluye los conceptos del Club Portamor.",
-        "Cursos grabados ilimitados",
-        "Acceso de canal de mentorias como soporte personalizado",
-        "Programas de talleres personalizados con nuestros especialistas deacuerdo a tu diagnóstico",
+        "Eventos grupales en línea de: \n\n Activación física, nutrición, participación social y bienestar mental.",
+        "Acceso a comunidad en línea",
       ],
     },
     {
       price: 79,
       title: "Club Plateado",
       details: [
-        "Incluye los conceptos del Club Basico de membresia",
-        "Talleres y cursos de emprendimiento en vivo",
-        "Conversatorios de bienestar mental y legal",
-        "Beneficio de 20% de descuento de cursos grabados",
+        "Conceptos de Club de Bronce",
+        "Diagnóstico",
+        "Acceso a plataforma",
+      ],
+    },
+    {
+      price: 129,
+      important: true,
+      title: "Club Oro",
+      details: [
+        "Conceptos de Club Plateado",
+        "Asesoramiento personalizado sobre nutrición y bienestar",
+        "Descuentos en productos complementarios",
+        "Acceso a eventos y actividades exclusivas de impacto social",
       ],
     },
   ];
@@ -79,13 +85,13 @@ export const OurMemberShips = () => {
         <BoxCircle />
         <Grid container spacing={3}>
           {memberships.map((x, i) => (
-            <Grid item key={i} xs={4} textAlign='center'>
-              <CardItem data-position={i + 1}>
-                {i === 1 && (
+            <Grid item key={i} xs={3} textAlign='center' position='relative'>
+              <CardItem data-important={x.important}>
+                {x.important && (
                   <>
                     <BoxBackground />
                     <Box
-                      sx={{ zIndex: 1, position: "absolute", right: "36px" }}
+                      sx={{ zIndex: 1, position: "absolute", right: "5px" }}
                     >
                       <Image src={heart} alt='portamor' />
                     </Box>
