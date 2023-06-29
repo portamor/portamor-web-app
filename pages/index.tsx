@@ -1,52 +1,15 @@
+import { Box, Button, Container, Link, Typography } from "@mui/material";
 import {
-  Box,
-  Button,
-  Container,
-  Link,
-  Typography,
-  Stack,
-  Paper,
-} from "@mui/material";
-import { Banner, FormRegister, OurAccomplishments, OurPrograms } from "@src/components/Home";
+  Banner,
+  FormRegister,
+  OurAccomplishments,
+  OurAdvantages,
+  OurBenefits,
+  OurMemberShips,
+  OurPrograms,
+} from "@src/components/Home";
 import Head from "next/head";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Image from "next/image";
-import comunities from "@public/icons/ic-comunities.svg";
-import courses from "@public/icons/ic-courses.svg";
-import meetings from "@public/icons/ic-meetings.svg";
-import specialists from "@public/icons/ic-specialists.svg";
-import workshops from "@public/icons/ic-workshops.svg";
-import check from "@public/check.svg";
-import { OurMemberShips } from "@src/components/Home/OurMemberships/OurMemberships";
-
-const benefits = [
-  {
-    title: "Cursos",
-    urlImage: courses,
-  },
-  {
-    title: "Talleres",
-    urlImage: workshops,
-  },
-  {
-    title: "Conversatorios",
-    urlImage: meetings,
-  },
-  {
-    title: "Especialistas",
-    urlImage: specialists,
-  },
-  {
-    title: "Comunidades",
-    urlImage: comunities,
-  },
-];
-
-const advantages = [
-  'Acompañamiento con amor, enfoque preventivo y de autocuidado: Ofrecemos reporte de seguimiento con especialistas en nuestros programas.',
-  'Basamos nuestros pilares de acción bajo las recomendaciones de la Organización Mundial de la Salud (OMS) para un envejecimiento activo y saludable.',
-  'Beneficio por ser un socio activo a buenos descuentos, acceso a eventos presenciales con la comunidad más amorosa.'
-]
 
 export default function Home() {
   return (
@@ -98,47 +61,9 @@ export default function Home() {
           </Box>
         </Box>
         <OurPrograms />
-        <Box mt={5}>
-          <Typography
-            variant='h4'
-            component='h2'
-            fontWeight={(theme) => theme.typography.fontWeightBold}
-            textAlign='center'
-            mb={5}
-          >
-            Beneficios
-          </Typography>
-          <Box>
-            <Stack direction='row' justifyContent='center' spacing={10}>
-              {benefits.map((x, i) => (
-                <Paper key={i} sx={{ textAlign: "center" }} elevation={0}>
-                  <Image src={x.urlImage} alt={x.title} />
-                  <Typography>{x.title}</Typography>
-                </Paper>
-              ))}
-            </Stack>
-          </Box>
-        </Box>
-        <Box mt={5}>
-          <Typography
-            variant='h4'
-            component='h2'
-            fontWeight={(theme) => theme.typography.fontWeightBold}
-            textAlign='center'
-            mb={5}
-          >
-            Ventajas
-          </Typography>
-          <Stack direction="column" spacing={2} maxWidth={945} margin="0 auto">
-            {advantages.map((x, i) => (
-              <Paper key={i} elevation={0} sx={{ display: 'flex', alignItems: 'center'}}>
-                <Image src={check} alt="check" />
-                <Typography ml={4}>{x}</Typography>
-              </Paper>
-            ))}
-          </Stack>
-        </Box>
-        <OurMemberShips/>
+        <OurBenefits />
+        <OurAdvantages />
+        <OurMemberShips />
         <FormRegister />
         <OurAccomplishments />
       </Container>
