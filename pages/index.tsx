@@ -10,6 +10,8 @@ import {
 } from "@src/components/Home";
 import Head from "next/head";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Layout from "@src/components/layout";
+import { ReactElement } from "react";
 
 export default function Home() {
   return (
@@ -70,3 +72,7 @@ export default function Home() {
     </>
   );
 }
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
