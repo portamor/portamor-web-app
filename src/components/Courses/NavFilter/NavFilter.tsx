@@ -1,8 +1,7 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
-import { getCoursesByGenre } from "../../Migration/Redux/actions";
 import { useState } from "react";
-import { useAppDispatch } from "@src/redux/hooks";
+import { useAppDispatch } from "@src/redux/hooks/useApp";
 import {
   fetchGetCourses,
   fetchGetCoursesByGenre,

@@ -2,9 +2,9 @@
 import { useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 import { ReduxProvider } from "@src/redux/provider";
-import { useAppDispatch, useAppSelector } from "@src/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@src/redux/hooks/useApp";
 
-import { Paginated } from "@src/components/Migration/Components";
+//import { Paginated } from "@src/components/Migration/Components";
 import NavFilter from "@src/components/Courses/NavFilter/NavFilter";
 import { CourseCard } from "@src/components/Courses";
 import { fetchGetCourses } from "@src/redux/slices/coursesSlice";
@@ -63,7 +63,6 @@ export default function Courses() {
   if (!courses.data) {
     return <>LOADING</>;
   }
-  console.log("courses", courses.data.courses);
   return (
     <Container maxWidth='lg' sx={{ my: 4 }}>
       <NavFilter />

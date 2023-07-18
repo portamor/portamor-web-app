@@ -3,12 +3,22 @@ import {
   configureStore,
   PreloadedState,
 } from "@reduxjs/toolkit";
-import coursesReducer from "./slices/coursesSlice";
-import userReducer from "./slices/userSlice";
+import {
+  courseDetailSlice,
+  courseSectionsSlice,
+  courseUsersSlice,
+  coursesSlice,
+  courseInstructorSlice,
+  userSlice,
+} from "./slices";
 
 const rootReducer = combineReducers({
-  courses: coursesReducer,
-  user: userReducer,
+  courses: coursesSlice,
+  user: userSlice,
+  courseDetail: courseDetailSlice,
+  courseSections: courseSectionsSlice,
+  courseUsers: courseUsersSlice,
+  courseInstructor: courseInstructorSlice,
 });
 
 export const store = configureStore({

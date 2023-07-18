@@ -1,9 +1,10 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RequestType } from "@src/const/request";
-import { CoursesState } from "./interfaces";
+import { CoursesState } from "../interfaces";
 import { Courses } from "@src/models";
-import { getCourses, getCoursesByGenre } from "../../services/coursesService";
+import { getCourses, getCoursesByGenre } from "../../services/courses.service";
 import { RootState } from "../store";
+import { FindCourses } from "@src/services/dtos";
 
 const initialState: CoursesState = {
   status: RequestType.Idle,
@@ -13,7 +14,7 @@ const initialState: CoursesState = {
 };
 
 export const fetchGetCourses = createAsyncThunk<
-  Courses,
+  FindCourses,
   { page: number },
   { state: RootState }
 >("home/fetchGetCourses", async ({ page }, thunkApi) => {
@@ -22,7 +23,7 @@ export const fetchGetCourses = createAsyncThunk<
 });
 
 export const fetchGetCoursesByGenre = createAsyncThunk<
-  Courses,
+  FindCourses,
   { id: string },
   { state: RootState }
 >("home/fetchGetCoursesByGenre", async ({ id }) => await getCoursesByGenre(id));
@@ -46,9 +47,9 @@ export const coursesSlice = createSlice({
     });
     builder.addCase(
       fetchGetCourses.fulfilled,
-      (state: CoursesState, action: PayloadAction<Courses>) => {
+      (state: CoursesState, action: PayloadAction<FindCourses>) => {
         state.status = RequestType.Resolved;
-        state.data = action.payload;
+        state.data = action.payload.data;
       }
     );
     builder.addCase(fetchGetCourses.rejected, (state: CoursesState, action) => {
@@ -60,9 +61,9 @@ export const coursesSlice = createSlice({
     });
     builder.addCase(
       fetchGetCoursesByGenre.fulfilled,
-      (state: CoursesState, action: PayloadAction<Courses>) => {
+      (state: CoursesState, action: PayloadAction<FindCourses>) => {
         state.status = RequestType.Resolved;
-        state.data = action.payload;
+        state.data = action.payload.data;
       }
     );
     builder.addCase(fetchGetCoursesByGenre.rejected, (state: CoursesState, action) => {

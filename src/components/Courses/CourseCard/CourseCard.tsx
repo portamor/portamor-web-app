@@ -7,13 +7,13 @@ import {
   Box,
   Button,
 } from "@mui/material";
-import * as actions from "../../Migration/Redux/actions";
+// import * as actions from "../../Migration/Redux/actions";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Edit from "@mui/icons-material/Edit";
 import Delete from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
-import { useAppDispatch, useAppSelector } from "@src/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@src/redux/hooks/useApp";
 
 export const CourseCard = ({ id, title, image, duration, level }) => {
   const router = useRouter();
@@ -34,7 +34,7 @@ export const CourseCard = ({ id, title, image, duration, level }) => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        dispatch(actions.deleteCourse(id));
+        // dispatch(actions.deleteCourse(id));
         Swal.fire("¡Borrado!", "El curso ha sido borrado.", "success")/* .then(
           () => {
             window.location.reload();
@@ -81,7 +81,7 @@ export const CourseCard = ({ id, title, image, duration, level }) => {
           color='primary'
           onClick={() => {
             router.push({
-              pathname: "/detalle-curso/[slug]",
+              pathname: "/course-detail/[slug]",
               query: { slug: id },
             });
           }}
