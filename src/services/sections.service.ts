@@ -1,8 +1,20 @@
 import { getRequest } from "@src/services/axiosConfig";
 import { FindGetCourseSections } from "./dtos";
+import { api } from "@src/redux/api";
 
-export const getSectionsByCourseId = async (
-  courseId: string
-): Promise<FindGetCourseSections> => {
-  return await getRequest(`section/course/${courseId}`);
-};
+const extendedApi = api.injectEndpoints({
+  endpoints: (build) => ({
+    getSectionsByCourseId: build.query<
+      FindGetCourseSections,
+      { courseId: string }
+    >({
+      query: ({ courseId }) => ({
+        url: `/section/course/${courseId}`,
+        method: "get",
+      }),
+    }),
+  }),
+  overrideExisting: false,
+});
+
+export const { useGetSectionsByCourseIdQuery } = extendedApi;

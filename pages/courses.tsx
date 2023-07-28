@@ -1,21 +1,17 @@
 "use client";
-import { useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 import { ReduxProvider } from "@src/redux/provider";
-import { useAppDispatch, useAppSelector } from "@src/redux/hooks/useApp";
 
 //import { Paginated } from "@src/components/Migration/Components";
 import NavFilter from "@src/components/Courses/NavFilter/NavFilter";
 import { CourseCard } from "@src/components/Courses";
-import { fetchGetCourses } from "@src/redux/slices/coursesSlice";
+import { useGetCoursesQuery } from "@src/services/courses.service";
+import { useState } from "react";
 
 export default function Courses() {
-  const dispatch = useAppDispatch();
-  const courses = useAppSelector((state) => state.courses);
+  const [currentGenreId, setCurrentGenreId] = useState("all");
+  const { data: courses } = useGetCoursesQuery({ page: 1, genre: currentGenreId })
 
-  useEffect(() => {
-    dispatch(fetchGetCourses({ page: 1 }));
-  }, [dispatch]);
   /* const [showModal, setShowModal] = useState(false);
   const isLoggedIn = useSelector((state: any) => state.isLoggedIn);
   const user = useSelector((state: any) => state.user);
@@ -60,15 +56,19 @@ export default function Courses() {
     </div>
   ); */
 
-  if (!courses.data) {
+  const handleUpdateGenre = (id: string) => {
+    setCurrentGenreId(id)
+  }
+
+  if (!courses) {
     return <>LOADING</>;
   }
   return (
     <Container maxWidth='lg' sx={{ my: 4 }}>
-      <NavFilter />
-      {courses.data.courses.length ? (
+      <NavFilter genre={currentGenreId} onUpdateGenre={handleUpdateGenre} />
+      {courses.courses.length ? (
         <Grid container spacing={2}>
-          {courses.data.courses.map((el) => (
+          {courses.courses.map((el) => (
             <Grid key={el.id} item xs={2}>
               <CourseCard
                 id={el.id}

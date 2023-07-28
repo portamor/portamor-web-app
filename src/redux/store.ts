@@ -3,26 +3,18 @@ import {
   configureStore,
   PreloadedState,
 } from "@reduxjs/toolkit";
-import {
-  courseDetailSlice,
-  courseSectionsSlice,
-  courseUsersSlice,
-  coursesSlice,
-  courseInstructorSlice,
-  userSlice,
-} from "./slices";
+import { courseSectionsSlice, userSlice } from "./slices";
+import { api } from "./api";
 
 const rootReducer = combineReducers({
-  courses: coursesSlice,
   user: userSlice,
-  courseDetail: courseDetailSlice,
   courseSections: courseSectionsSlice,
-  courseUsers: courseUsersSlice,
-  courseInstructor: courseInstructorSlice,
+  [api.reducerPath]: api.reducer,
 });
 
 export const store = configureStore({
   reducer: rootReducer,
+  middleware: (gDM) => gDM().concat(api.middleware),
 });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {

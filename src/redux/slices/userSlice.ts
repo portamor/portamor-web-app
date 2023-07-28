@@ -2,12 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface UserState {
   admin: boolean;
+  pageSize: number;
   id: string;
 }
 
 const initialState: UserState = {
   admin: false,
-  id: "2"
+  pageSize: 8,
+  id: "2",
 };
 
 export const userSlice = createSlice({

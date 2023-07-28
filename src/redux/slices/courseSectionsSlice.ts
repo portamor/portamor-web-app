@@ -1,7 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RequestType } from "@src/const/request";
 import { SectionState } from "../interfaces";
-import { getSectionsByCourseId } from "@src/services/sections.service";
 import { RootState } from "../store";
 import { FindGetCourseSections } from "@src/services/dtos";
 
@@ -11,21 +10,21 @@ const initialState: SectionState = {
   data: null,
 };
 
-export const fetchGetCourseSections = createAsyncThunk<
+/* export const fetchGetCourseSections = createAsyncThunk<
   FindGetCourseSections,
   { id: string },
   { state: RootState }
 >(
   "home/fetchGetCourseSections",
   async ({ id }) => await getSectionsByCourseId(id)
-);
+); */
 
 export const courseSectionsSlice = createSlice({
   name: "courseSections",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchGetCourseSections.pending, (state: SectionState) => {
+    /* builder.addCase(fetchGetCourseSections.pending, (state: SectionState) => {
       state.status = RequestType.Pending;
     });
     builder.addCase(
@@ -41,7 +40,7 @@ export const courseSectionsSlice = createSlice({
         state.status = RequestType.Rejected;
         state.error = action.error.message || "Unknown error";
       }
-    );
+    ); */
   },
 });
 

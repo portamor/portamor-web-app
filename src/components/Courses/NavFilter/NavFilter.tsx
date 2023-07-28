@@ -1,17 +1,15 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
 import { useState } from "react";
-import { useAppDispatch } from "@src/redux/hooks/useApp";
-import {
-  fetchGetCourses,
-  fetchGetCoursesByGenre,
-} from "@src/redux/slices/coursesSlice";
 
-const NavFilter = () => {
-  const dispatch = useAppDispatch();
-  const [currentGenreId, setCurrentGenreId] = useState("");
+interface Props {
+  genre: string;
+  onUpdateGenre: (id: string) => void;
+}
+
+const NavFilter = ({ onUpdateGenre, genre }: Props) => {
   const filters = [
-    { id: "", name: "Todos los cursos" },
+    { id: "all", name: "Todos los cursos" },
     { id: "1", name: "Actividad Física" },
     { id: "2", name: "Participación Social" },
     { id: "3", name: "Bienestar Mental" },
@@ -19,12 +17,7 @@ const NavFilter = () => {
   ];
 
   const handleSelectChange = (id: string) => {
-    setCurrentGenreId(id);
-    if (id === "") {
-      dispatch(fetchGetCourses({ page: 1 }));
-      return;
-    }
-    dispatch(fetchGetCoursesByGenre({ id }));
+    onUpdateGenre(id);
   };
 
   return (
@@ -33,7 +26,7 @@ const NavFilter = () => {
         {filters.map((filter, i) => (
           <Box key={i} mx={2}>
             <Button
-              variant={currentGenreId === filter.id ? "contained" : "outlined"}
+              variant={genre === filter.id ? "contained" : "outlined"}
               onClick={() => handleSelectChange(filter.id)}
             >
               {filter.name}
@@ -42,7 +35,7 @@ const NavFilter = () => {
         ))}
       </Box>
       <select
-        value={currentGenreId}
+        value={genre}
         onChange={(e) => handleSelectChange(e.target.value)}
       >
         {filters.map((filter, i) => (

@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { ReduxProvider } from "@src/redux/provider";
 import Image from "next/image";
-import { useGetCourseDetail } from "@src/redux/hooks/useGetCourseDetail";
 import { Box, Typography } from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import StarIcon from "@mui/icons-material/Star";
@@ -10,18 +9,13 @@ import StarIcon from "@mui/icons-material/Star";
 import styles from "@src/components/CourseDetail/CourseDetail.module.css";
 // import SelectedContent from "@src/components/CourseDetail/SelectedContent/SelectedContent";
 import { Link } from "react-router-dom";
+import { useGetCourseDetailQuery } from "@src/services/courses.service";
+import { useAppSelector } from "@src/redux/hooks";
 
 export default function CourseDetail({ courseId }) {
-  const {
-    doRequest,
-    courseDetail,
-    courseUsersQuantity,
-    firstVideoId,
-    instructor,
-    user,
-    courses,
-  } = useGetCourseDetail();
-  const [isLoading, setIsLoading] = useState(true);
+  const { data } = useGetCourseDetailQuery({ courseId })
+  const user = useAppSelector((state) => state.user);
+  // const courses = useAppSelector((state) => state.courses.data);
   const [isEnrolled, setIsEnrolled] = useState(false);
   const [currentSectionId, setCurrentSectionId] = useState("1");
   const sections = [
@@ -30,27 +24,15 @@ export default function CourseDetail({ courseId }) {
     { id: "3", name: "Comentarios" },
   ];
 
-  useEffect(() => {
-    if (courseId) {
-      doRequest(courseId as string, () => {
-        setIsLoading(false);
-      });
-    }
-  }, []);
-
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setCurrentSectionId(newValue);
-  };
-
-  if (isLoading) {
+  if (!data) {
     return <>LOADING</>;
   }
 
-  const userIsEnrolled =
+  /* const userIsEnrolled =
     user.id &&
-    courses?.courses.some(
+    data.courses?.courses.some(
       (course) => course.id === courseId && course.userId === user.id
-    );
+    ); */
 
   return (
     <div className={styles["course-detail-main"]}>
@@ -59,7 +41,7 @@ export default function CourseDetail({ courseId }) {
           <div className={styles["head-instructor-container"]}>
             <div className={styles["instructor-name-container"]}>
               <Image
-                src={instructor.profilePicture}
+                src={data.instructor.profilePicture}
                 alt='instructor course detail'
                 width={80}
                 height={80}
@@ -68,23 +50,23 @@ export default function CourseDetail({ courseId }) {
               <div>
                 <p>Instructor</p>
                 <h2 className={styles["head-instructor-name"]}>
-                  {instructor.name}
+                  {data.instructor.name}
                 </h2>
               </div>
             </div>
             <span className={styles["stars-container"]}>
-              {new Array(instructor.score).fill(true).map((_, i) => (
+              {new Array(data.instructor.score).fill(true).map((_, i) => (
                 <StarIcon key={i} color='primary' />
               ))}
             </span>
           </div>
 
           <div className={styles["course-detail-h1-container"]}>
-            <h1 className={styles["course-title"]}>{courseDetail.title}</h1>
+            <h1 className={styles["course-title"]}>{data.courseDetail.title}</h1>
           </div>
           <Box display="flex" alignItems="center" my={2}>
             <PeopleAltIcon />
-            <Typography variant="body1" ml={2}>{courseUsersQuantity} Estudiantes</Typography>
+            <Typography variant="body1" ml={2}>{data.users.length} Estudiantes</Typography>
           </Box>
         </div>
       </div>

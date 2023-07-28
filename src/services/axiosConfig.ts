@@ -1,4 +1,5 @@
-import axios from "axios";
+import { BaseQueryFn } from "@reduxjs/toolkit/dist/query";
+import axios, { AxiosError, AxiosRequestConfig } from "axios";
 
 const axiosClient = axios.create({
   baseURL: "/api",
@@ -44,3 +45,31 @@ export function deleteRequest(url: string): Promise<any> {
       throw new Error(error.message);
     });
 }
+
+export const axiosBaseQuery =
+  (
+    { baseUrl }: { baseUrl: string } = { baseUrl: "" }
+  ): BaseQueryFn<
+    {
+      url: string;
+      method: AxiosRequestConfig["method"];
+      data?: AxiosRequestConfig["data"];
+      params?: AxiosRequestConfig["params"];
+    },
+    unknown,
+    unknown
+  > =>
+  async ({ url, method, data, params }) => {
+    try {
+      const result = await axios({ url: baseUrl + url, method, data, params });
+      return { data: result.data.data };
+    } catch (axiosError) {
+      let err = axiosError as AxiosError;
+      return {
+        error: {
+          status: err.response?.status,
+          data: err.response?.data || err.message,
+        },
+      };
+    }
+  };
