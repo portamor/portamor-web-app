@@ -1,7 +1,7 @@
 import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query/react";
 import { api } from "@src/redux/api";
 import { RootState } from "@src/redux/store";
-import { Course, Courses, Instructor, Section, User } from "@src/models";
+import { Course, Courses, Instructor, Review, Section, User } from "@src/models";
 
 const extendedApi = api.injectEndpoints({
   endpoints: (build) => ({
@@ -31,8 +31,9 @@ const extendedApi = api.injectEndpoints({
       {
         courseDetail: Course;
         instructor: Instructor;
-        section: Section[];
+        sections: Section[];
         users: User[];
+        reviews: Review[];
       },
       { courseId: string }
     >({
@@ -41,6 +42,7 @@ const extendedApi = api.injectEndpoints({
           fetchWithBQ({ url: `/courses/id/${courseId}`, method: "get" }),
           fetchWithBQ({ url: `/section/course/${courseId}`, method: "get" }),
           fetchWithBQ({ url: `/users/course/${courseId}`, method: "get" }),
+          fetchWithBQ({ url: `/review/${courseId}`, method: "get" }),
         ]);
 
         const failedResults = results.find(({ error }) => error);
@@ -48,10 +50,11 @@ const extendedApi = api.injectEndpoints({
           return { error: failedResults.error };
         }
 
-        const [courseDetail, section, users] = results as [
+        const [courseDetail, sections, users, review] = results as [
           { data: Course },
           { data: Section[] },
-          { data: User[] }
+          { data: User[] },
+          { data: Review[] }
         ];
         const instructor = await fetchWithBQ({
           url: `/instructor/id/${courseDetail.data.instructorId}`,
@@ -62,8 +65,9 @@ const extendedApi = api.injectEndpoints({
               data: {
                 courseDetail: courseDetail.data,
                 instructor: instructor.data as Instructor,
-                section: section.data,
+                sections: sections.data,
                 users: users.data,
+                reviews: review.data,
               },
             }
           : { error: instructor.error as FetchBaseQueryError };

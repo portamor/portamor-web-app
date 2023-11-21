@@ -9,7 +9,7 @@ export type Course = {
   image: string;
   genre: string;
   rating: string;
-  materials: string;
+  materials: string[];
 };
 
 export type Courses = {
@@ -23,14 +23,41 @@ export type Courses = {
 };
 
 export type Section = {
-  videos: [{ id: string }]
+  id: string;
+  name: string;
+  videos: [{ id: string }];
 };
 
-export type User = {}
+export type User = {
+  id: string;
+  name: string;
+  lastName: string;
+  code: string;
+  birthday: string;
+  admin: boolean;
+};
 
 export type Instructor = {
   id: string;
   name: string;
+  description: string;
   score: number;
   profilePicture: string;
+  reviews: number;
+};
+
+enum ReviewType {
+  EXCELENT = "Excelente",
+  RECOMENT = "Recomendado",
+  GOOD = "Bueno",
+  NOT_LIKE = "No me gusto",
+  BAD = "Malo",
+}
+
+export type Review = {
+  id: string;
+  courseId: string; // Revisar xq no se encuentra
+  title: ReviewType;
+  comment: string;
+  starsValue: number;
 };

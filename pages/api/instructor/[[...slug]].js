@@ -14,8 +14,10 @@ export default function handler(req, res) {
       data: {
         id: "1",
         name: "Pepe",
+        description: "Tiene experiencia",
         score: 2,
         profilePicture: "https://picsum.photos/seed/picsum/80/80",
+        reviews: 2,
       },
     });
   }

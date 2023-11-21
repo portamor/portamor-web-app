@@ -11,13 +11,17 @@ export default function handler(req, res) {
   if (slug[0] === "course") {
     // El id viene en slug[1]
     res.status(200).json({
-      data: {
-        videos: [
-          {
-            id: "1",
-          },
-        ],
-      },
+      data: [
+        {
+          id: "1",
+          name: "Modulo Inicial",
+          videos: [
+            {
+              id: "1",
+            },
+          ],
+        },
+      ],
     });
   }
 }

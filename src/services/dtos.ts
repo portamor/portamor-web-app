@@ -1,4 +1,4 @@
-import { Course, Courses, Instructor, Section, User } from "@src/models";
+import { Course, Courses, Instructor, Review, Section, User } from "@src/models";
 
 export interface FindUsersByCourseId {
   data: User[];
@@ -22,4 +22,9 @@ export interface FindCoursesByGenre {
 
 export interface FindGetCourseSections {
   data: Section[];
+}
+
+// No se usa
+export interface FindGetReviewsByCourseId {
+  data: Review[];
 }

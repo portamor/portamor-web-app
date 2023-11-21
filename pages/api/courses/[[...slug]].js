@@ -6,18 +6,20 @@ export default function handler(req, res) {
   if (!slug) {
     res.status(200).json({
       data: {
+        message: "Cursos encontrados con exito",
         courses: [
           {
             id: "123",
-            userId: "2",
             title: "Title course",
             description: "Lorem ipsum dolor sit ammet",
+            image: "https://picsum.photos/200/300",
+            materials: ["lápiz, papel"],
+
+            userId: "2",
             duration: "3",
             level: "Basic",
-            image: "https://picsum.photos/200/300",
             genre: "Current genre",
             rating: 5,
-            materials: "materials",
           },
         ],
         meta: {
@@ -41,6 +43,9 @@ export default function handler(req, res) {
       data: {
         instructorId: "1010",
         title: "Title course",
+        description: "Lorem ipsum dolor",
+        image: "https://picsum.photos/200/300",
+        materials: ["lápiz, papel"],
       },
     });
   }

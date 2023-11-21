@@ -1,4 +1,3 @@
-import { getRequest } from "@src/services/axiosConfig";
 import { FindGetCourseSections } from "./dtos";
 import { api } from "@src/redux/api";
 

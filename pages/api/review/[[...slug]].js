@@ -8,18 +8,17 @@ export default function handler(req, res) {
     return
   }
 
-  if (slug[0] === "course") {
-    // El id viene en slug[1]
+  if (slug[0]) {
     res.status(200).json({
-      data: []
-    });
-  }
-
-  if (slug[0] === "inscription") {
-    // POST
-    // El id viene en slug[1]
-    res.status(200).json({
-      data: true,
+      data: [
+        {
+          id: "1",
+          courseId: "", // Revisar que no se encuentra
+          title: "Recomendado",
+          comment: "Estuvo bueno",
+          starsValue: 4,
+        },
+      ],
     });
   }
 }

@@ -53,7 +53,7 @@ export const CourseCard = ({ id, title, image, duration, level }) => {
             <Link
               href={{
                 pathname: "/dashboard",
-                // Tengo que pasar el state={id}
+                // TODO: Tengo que pasar el state={id}
               }}
             >
               <Edit color='primary' />
