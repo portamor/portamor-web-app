@@ -32,11 +32,11 @@ export default function NavBar() {
             alignItems='center'
             sx={{ fontSize: (theme) => theme.typography.body2 }}
           >
-            {navItems.map((item) => (
+            {/* {navItems.map((item) => (
               <Link href='#' underline='hover' color='black' key={item} mx={1}>
                 {item}
               </Link>
-            ))}
+            ))} */}
           </Box>
           <Box>
             <Button variant='contained'>Registrarse</Button>

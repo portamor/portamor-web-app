@@ -48,7 +48,7 @@ export default function Home() {
               portamor.
               <br />
               <Link
-                href='#'
+                href='https://www.youtube.com/watch?v=2BYMUkh-jRY&ab_channel=Portamor%F0%9F%92%9FComunidaddeadultosmayores'
                 underline='hover'
                 color='primary'
                 mt={1}
@@ -57,7 +57,9 @@ export default function Home() {
                 Ver video
               </Link>
             </Typography>
-            <Button variant='outlined' endIcon={<ArrowForwardIcon />}>
+            <Button variant='outlined' endIcon={<ArrowForwardIcon />} onClick={() => {
+              window.location.href = 'https://api.whatsapp.com/send?phone=943203772&text=%C2%A1Hola%20Portamor!'
+            }}>
               Conocer más
             </Button>
           </Box>

@@ -26,7 +26,7 @@ export const Footer = () => {
             <Typography color="inherit" my={4} fontWeight="medium">Contáctanos</Typography>
             <Box display="flex" alignItems="center">
               <Image src={icWsp} alt="icon whatsapp" />
-              <Typography variant="body2" color="inherit" ml={2}>+51 999999999</Typography>
+              <Typography variant="body2" color="inherit" ml={2}>+51 943203772</Typography>
             </Box>
             <Box display="flex" alignItems="center" mt={2}>
               <Image src={icGmail} alt="icon gmail" />
@@ -36,10 +36,10 @@ export const Footer = () => {
           <Grid item xs={4}>
             <Typography color="inherit" my={4} fontWeight="medium">Síguenos</Typography>
             <Box>
-              <Image src={icFb} alt="icon facebook" />
-              <Image src={icIns} alt="icon instagram" style={{ marginLeft: 20 }} />
-              <Image src={icLink} alt="icon linkedin" style={{ marginLeft: 20 }} />
-              <Image src={icYt} alt="icon youtube" style={{ marginLeft: 20 }} />
+              <a href="https://www.facebook.com/Portamor.pe" target="_blank"><Image src={icFb} alt="icon facebook" /></a>
+              <a href="https://www.instagram.com/portamor.pe/?hl=es" target="_blank"><Image src={icIns} alt="icon instagram" style={{ marginLeft: 20 }} /></a>
+              <a href="https://www.linkedin.com/company/portamor" target="_blank"><Image src={icLink} alt="icon linkedin" style={{ marginLeft: 20 }} /></a>
+              <a href="https://www.youtube.com/@portamorcomunidaddeadultos3376" target="_blank"><Image src={icYt} alt="icon youtube" style={{ marginLeft: 20 }} /></a>
             </Box>
           </Grid>
         </Grid>

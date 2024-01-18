@@ -76,6 +76,9 @@ export const Banner = () => {
               py: 2,
               px: 4,
             }}
+            onClick={() => {
+              window.location.href = 'https://api.whatsapp.com/send?phone=943203772&text=%C2%A1Hola%20Portamor!'
+            }}
           >
             Únete ahora
           </Button>

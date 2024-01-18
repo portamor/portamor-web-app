@@ -128,6 +128,9 @@ export const OurMemberShips = () => {
                   size='small'
                   color='primary'
                   endIcon={<ArrowForwardIcon />}
+                  onClick={() => {
+                    window.location.href = 'https://api.whatsapp.com/send?phone=943203772&text=%C2%A1Hola%20Portamor!'
+                  }}
                 >
                   Elegir este plan
                 </Button>
