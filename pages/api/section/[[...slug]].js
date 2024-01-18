@@ -18,6 +18,7 @@ export default function handler(req, res) {
           videos: [
             {
               id: "1",
+              videoTitle: "Alquimia",
             },
           ],
         },

@@ -8,7 +8,7 @@ export type Course = {
   level: string;
   image: string;
   genre: string;
-  rating: string;
+  rating: number;
   materials: string[];
 };
 
@@ -25,7 +25,7 @@ export type Courses = {
 export type Section = {
   id: string;
   name: string;
-  videos: [{ id: string }];
+  videos: [{ id: string; videoTitle: string }];
 };
 
 export type User = {
@@ -46,7 +46,7 @@ export type Instructor = {
   reviews: number;
 };
 
-enum ReviewType {
+export enum ReviewType {
   EXCELENT = "Excelente",
   RECOMENT = "Recomendado",
   GOOD = "Bueno",
@@ -61,3 +61,12 @@ export type Review = {
   comment: string;
   starsValue: number;
 };
+
+export type CourseVideo = {
+  id: string;
+  videoTitle: string;
+  videoLink: string;
+  videoDescription: string;
+};
+
+export type CourseVideoState = {};

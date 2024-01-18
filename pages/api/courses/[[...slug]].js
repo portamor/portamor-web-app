@@ -46,7 +46,22 @@ export default function handler(req, res) {
         description: "Lorem ipsum dolor",
         image: "https://picsum.photos/200/300",
         materials: ["lápiz, papel"],
+        rating: 5,
       },
+    });
+  }
+
+  if (slug[0] === "videos") {
+    // El id viene en slug[1]
+    res.status(200).json({
+      data: [
+        {
+          id: "1010",
+          videoTitle: "Title video",
+          videoLink: "Lorem ipsum dolor",
+          videoDescription: "Lorem description",
+        },
+      ],
     });
   }
 }

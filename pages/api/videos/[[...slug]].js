@@ -8,21 +8,16 @@ export default function handler(req, res) {
     return
   }
 
-  if (slug[0] === "course") {
+  if (slug[0] === "id") {
     // El id viene en slug[1]
     res.status(200).json({
-      data: [{
-        name: 'Vic',
-        lastName: 'Smith'
-      }]
-    });
-  }
-
-  if (slug[0] === "inscription") {
-    // POST
-    // El id viene en slug[1]
-    res.status(200).json({
-      data: true,
+      data: {
+        id: "1010",
+        videoTitle: "Title video",
+        videoLink:
+          "https://www.youtube.com/watch?v=i3CerEkkAmU&ab_channel=YoelvisMulen%7Bcode%7D",
+        videoDescription: "Lorem description",
+      },
     });
   }
 }

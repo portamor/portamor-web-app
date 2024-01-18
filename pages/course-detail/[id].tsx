@@ -92,7 +92,7 @@ export default function CourseDetail({ courseId }) {
               <Tab
                 label='Ir a clases'
                 value='/trash'
-                href={{ pathname: "/dashboard" }}
+                href={{ pathname: `/course/${courseId}/${data.sections[0].videos[0].id}` }}
                 component={Link}
               />
             )}

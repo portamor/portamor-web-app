@@ -1,7 +1,16 @@
 import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query/react";
 import { api } from "@src/redux/api";
 import { RootState } from "@src/redux/store";
-import { Course, Courses, Instructor, Review, Section, User } from "@src/models";
+import {
+  Course,
+  CourseVideo,
+  CourseVideoState,
+  Courses,
+  Instructor,
+  Review,
+  Section,
+  User,
+} from "@src/models";
 
 const extendedApi = api.injectEndpoints({
   endpoints: (build) => ({
@@ -73,8 +82,75 @@ const extendedApi = api.injectEndpoints({
           : { error: instructor.error as FetchBaseQueryError };
       },
     }),
+    getCourse: build.query<
+      {
+        courseDetail: Course;
+        videosCourse: CourseVideo[];
+        videoStateCourse: CourseVideoState[];
+        videoById: CourseVideo;
+        courseReviews: Review[];
+        courseUsers: User[];
+        courseSections: Section[];
+      },
+      { courseId: string; userId: string; videoId: string }
+    >({
+      async queryFn(
+        { courseId, userId, videoId },
+        _queryApi,
+        _extraOptions,
+        fetchWithBQ
+      ) {
+        const results = await Promise.all([
+          fetchWithBQ({ url: `/courses/id/${courseId}`, method: "get" }),
+          fetchWithBQ({ url: `/courses/videos/${courseId}`, method: "get" }),
+          fetchWithBQ({ url: `/state/${userId}/${courseId}`, method: "get" }),
+          fetchWithBQ({ url: `/videos/id/${videoId}`, method: "get" }),
+          fetchWithBQ({ url: `/review/${courseId}`, method: "get" }),
+          fetchWithBQ({ url: `/users/course/${courseId}`, method: "get" }),
+          fetchWithBQ({ url: `/section/course/${courseId}`, method: "get" }),
+        ]);
+
+        const failedResults = results.find(({ error }) => error);
+        if (failedResults) {
+          return { error: failedResults.error };
+        }
+
+        const [
+          courseDetail,
+          courseVideos,
+          courseVideoState,
+          videoById,
+          courseReviews,
+          courseUsers,
+          courseSections,
+        ] = results as [
+          { data: Course },
+          { data: CourseVideo[] },
+          { data: CourseVideoState[] },
+          { data: CourseVideo },
+          { data: Review[] },
+          { data: User[] },
+          { data: Section[] }
+        ];
+        return {
+          data: {
+            courseDetail: courseDetail.data,
+            videosCourse: courseVideos.data,
+            videoStateCourse: courseVideoState.data,
+            videoById: videoById.data,
+            courseReviews: courseReviews.data,
+            courseUsers: courseUsers.data,
+            courseSections: courseSections.data,
+          },
+        };
+      },
+    }),
   }),
   overrideExisting: false,
 });
 
-export const { useGetCoursesQuery, useGetCourseDetailQuery } = extendedApi;
+export const {
+  useGetCoursesQuery,
+  useGetCourseDetailQuery,
+  useGetCourseQuery,
+} = extendedApi;
