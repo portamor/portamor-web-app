@@ -78,7 +78,7 @@ export default function CourseDetail({ courseId, videoId }: CourseDetailProps) {
             {data.courseDetail.description}
           </p>
           <span className={styles["stars-container"]}>
-            Valoración del curso: 
+            Valoración del curso:
             {new Array(data.courseDetail.rating).fill(true).map((_, i) => <StarFill key={i} color="red" />)}
           </span>
           <div className={styles["certified-container"]}>

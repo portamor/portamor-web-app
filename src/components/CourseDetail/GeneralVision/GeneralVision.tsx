@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Button, Dialog } from "@mui/material";
 import Swal from "sweetalert2";
 import certificate from "@public/courses/certificate.png";
-import Modal from "../../Migration/Components/Modal/Modal";
 import styles from "./GeneralVision.module.css";
 import "sweetalert2/dist/sweetalert2.min.css";
 import { useAppSelector } from "@src/redux/hooks";

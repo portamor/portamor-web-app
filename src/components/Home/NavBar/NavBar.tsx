@@ -37,6 +37,9 @@ export default function NavBar() {
                 {item}
               </Link>
             ))} */}
+            <Link href='http://18.219.152.230' underline='hover' color='black' mx={1}>
+              Cursos
+            </Link>
           </Box>
           <Box>
             <Button variant='contained'>Registrarse</Button>

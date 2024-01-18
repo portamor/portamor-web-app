@@ -1,10 +1,8 @@
 import React from "react";
-import { REVIEW } from "../../Migration/constants";
 import styles from "./CreateReview.module.css";
 import { StarFill } from "react-bootstrap-icons";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import * as utils from "../../Migration/utils";
 import { Button } from "@mui/material";
 import { ReviewType } from "@src/models";
 
@@ -19,7 +17,7 @@ export const CreateReview = ({ courseId }: CreateReviewProps) => {
   // TODO: Poner localStorage cuando se agregue el modulo del login
   // const user = JSON.parse(localStorage.getItem("user"));
   const user = { id: "123" }
-  
+
   const [formValues, setFormValues] = useState({
     title: "",
     comment: "",
@@ -51,10 +49,20 @@ export const CreateReview = ({ courseId }: CreateReviewProps) => {
     });
   };
 
+  const validate = (values) => {
+    const errors: any = {};
+
+    if (!values.title.trim()) errors.title = "El titulo del comentario es necesario";
+    if (!values.comment.trim()) errors.comment = "Necesitas escribir un comentario";
+    if (!values.stars_value) errors.stars_value = "Necesitas dar una puntuacion al curso";
+
+    return errors;
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const formErrors = utils.validate(formValues, REVIEW);
+    const formErrors = validate(formValues);
 
     if (Object.keys(formErrors).length !== 0) {
       setErrors(formErrors);
@@ -127,11 +135,11 @@ export const CreateReview = ({ courseId }: CreateReviewProps) => {
           <Button
             type="submit"
             variant="contained"
-            /* disabled={
-              errors.title || errors.comment || errors.stars_value
-                ? true
-                : false
-            } */
+          /* disabled={
+            errors.title || errors.comment || errors.stars_value
+              ? true
+              : false
+          } */
           >
             Crear comentario
           </Button>

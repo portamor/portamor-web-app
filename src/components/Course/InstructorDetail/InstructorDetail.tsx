@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+/* import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./InstructorDetail.module.css";
 import * as actions from "../../Migration/Redux/actions";
@@ -22,10 +22,10 @@ const InstructorDetail = ({ instructorId }) => {
       <h2 className={styles["instructor-name"]}>{instructor.name}</h2>
       <div className={styles["instructor-image-description-container"]}>
         <div>
-          {/* <div className={styles["instructor-details-container"]} >
+          <div className={styles["instructor-details-container"]} >
            <img src={usersIcon} alt="user-icon" />
             <p>120 estudiantes</p>
-          </div> */}
+          </div>
           <div className={styles["instructor-details-container"]}>
             <StarFill color='red' size='30px' />
             <p>{instructor.score} calificacion </p>
@@ -53,3 +53,4 @@ const InstructorDetail = ({ instructorId }) => {
 };
 
 export default InstructorDetail;
+ */
