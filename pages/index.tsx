@@ -7,10 +7,10 @@ import {
   OurBenefits,
   OurMemberShips,
   OurPrograms,
-} from "@src/components/Home";
+} from "@src/modules/landing/components";
 import Head from "next/head";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Layout from "@src/components/layout";
+import Layout from "@src/modules/shared/components/layout";
 import { ReactElement } from "react";
 
 export default function Home() {

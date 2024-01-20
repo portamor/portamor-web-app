@@ -1,11 +1,11 @@
 "use client";
 import { Container, Grid } from "@mui/material";
-import { ReduxProvider } from "@src/redux/provider";
+import { ReduxProvider } from "@src/modules/shared/redux/provider";
 
 //import { Paginated } from "@src/components/Migration/Components";
-import NavFilter from "@src/components/Courses/NavFilter/NavFilter";
-import { CourseCard } from "@src/components/Courses";
-import { useGetCoursesQuery } from "@src/services/courses.service";
+import NavFilter from "@src/modules/courses/components/NavFilter/NavFilter";
+import { CourseCard } from "@src/modules/courses/components";
+import { useGetCoursesQuery } from "@src/modules/courses/services/courses.service";
 import { useState } from "react";
 
 export default function Courses() {

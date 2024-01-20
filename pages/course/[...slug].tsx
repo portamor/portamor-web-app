@@ -1,22 +1,22 @@
 "use client";
 import React, { useState } from "react";
-import { ReduxProvider } from "@src/redux/provider";
+import { ReduxProvider } from "@src/modules/shared/redux/provider";
 import Image from "next/image";
 import Link from "next/link";
 
-import styles from "@src/components/Course/ClassDetail.module.css";
-import { useAppSelector } from "@src/redux/hooks";
-import { useGetCourseQuery } from "@src/services/courses.service";
+import styles from "@src/modules/course/components/ClassDetail.module.css";
+import { useAppSelector } from "@src/modules/shared/redux/hooks";
+import { useGetCourseQuery } from "@src/modules/courses/services/courses.service";
 import ReactPlayer from "react-player";
 import certifiedImg from "@public/images/certified-portamor.svg";
 import { Button, Tab, Tabs } from "@mui/material";
-import { TabPanel } from "@src/components/CourseDetail/TabPanel/TabPanel";
+import { TabPanel } from "@src/modules/courseDetail/components/TabPanel/TabPanel";
 import { StarFill } from "react-bootstrap-icons";
-import { ReviewCard } from "@src/components/CourseDetail/ReviewCard/ReviewCard";
-import { CreateReview } from "@src/components/Course/CreateReview/CreateReview";
-import { UserCard } from "@src/components/Course/UserCard/UserCard";
-import { FYQ } from "@src/components/CourseDetail/FYQ/FYQ";
-import { CourseAccordion } from "@src/components/Course/CourseAccordion/CourseAccordion";
+import { ReviewCard } from "@src/modules/courseDetail/components/ReviewCard/ReviewCard";
+import { CreateReview } from "@src/modules/course/components/CreateReview/CreateReview";
+import { UserCard } from "@src/modules/course/components/UserCard/UserCard";
+import { FYQ } from "@src/modules/courseDetail/components/FYQ/FYQ";
+import { CourseAccordion } from "@src/modules/course/components/CourseAccordion/CourseAccordion";
 
 interface CourseDetailProps {
   courseId: string;
