@@ -12,28 +12,29 @@ import Head from "next/head";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Layout from "@src/components/layout";
 import { ReactElement } from "react";
+import { OurRecognition } from "@src/components/Home/OurRecognition/OurRecognition";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Portamor - Envejecimiento activo</title>
-        <meta name='description' content='Portamor - Envejecimiento activo' />
-        <link rel='icon' href='/favicon2.ico' />
+        <title>Portamor - Primera Escuela Integral del adulto mayor</title>
+        <meta name='description' content='Plataforma que promueve el envejecimiento activo y saludable e involucra a la familia a una vida plena, activa y conectada' />
+        <link rel='icon' href='/favicon.ico'/>
         {/* Add SEO meta tags */}
-        <meta name='keywords' content='Portamor, envejecimiento activo, salud física, salud mental, salud social' />
+        <meta name='keywords' content='Portamor, envejecimiento activo, salud física, salud mental, participación social, Alimentación Saludable' />
         <meta name='author' content='portamor team' />
         <meta name='robots' content='index, follow' />
         {/* Add Open Graph meta tags */}
         <meta property='og:title' content='Portamor - Envejecimiento activo' />
-        <meta property='og:description' content='Portamor es una comunidad comprometida con el bienestar integral de quienes comparten la experiencia del envejecimiento.' />
+        <meta property='og:description' content='Plataforma que promueve el envejecimiento activo y saludable e involucra a la familia a una vida plena, activa y conectada' />
         <meta property='og:image' content='/logo.png' />
         <meta property='og:url' content='https://www.portamor.com' />
         <meta property='og:type' content='website' />
         {/* Add Twitter Card meta tags */}
         <meta name='twitter:card' content='/logo.png' />
         <meta name='twitter:title' content='Portamor - Envejecimiento activo' />
-        <meta name='twitter:description' content='Portamor es una comunidad comprometida con el bienestar integral de quienes comparten la experiencia del envejecimiento.' />
+        <meta name='twitter:description' content='Plataforma que promueve el envejecimiento activo y saludable e involucra a la familia a una vida plena, activa y conectada' />
         <meta name='twitter:image' content='/logo.png' />
         {/* Add more Open Graph meta tags */}
         <meta property='og:locale' content='es_pe' />
@@ -86,6 +87,7 @@ export default function Home() {
         <OurMemberShips />
         <FormRegister />
         <OurAccomplishments />
+        <OurRecognition />
       </Container>
     </>
   );
