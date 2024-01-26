@@ -7,12 +7,12 @@ import {
   OurBenefits,
   OurMemberShips,
   OurPrograms,
-} from "@src/components/Home";
+} from "@src/modules/landing/components";
 import Head from "next/head";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Layout from "@src/components/layout";
+import Layout from "@src/modules/shared/components/layout";
 import { ReactElement } from "react";
-import { OurRecognition } from "@src/components/Home/OurRecognition/OurRecognition";
+import { OurRecognition } from "@src/modules/landing/components/OurRecognition/OurRecognition";
 
 export default function Home() {
   return (
@@ -67,7 +67,7 @@ export default function Home() {
               portamor.
               <br />
               <Link
-                href='#'
+                href='https://www.youtube.com/watch?v=2BYMUkh-jRY&ab_channel=Portamor%F0%9F%92%9FComunidaddeadultosmayores'
                 underline='hover'
                 color='primary'
                 mt={1}
@@ -76,7 +76,9 @@ export default function Home() {
                 Ver video
               </Link>
             </Typography>
-            <Button variant='outlined' endIcon={<ArrowForwardIcon />}>
+            <Button variant='outlined' endIcon={<ArrowForwardIcon />} onClick={() => {
+              window.location.href = 'https://api.whatsapp.com/send?phone=943203772&text=%C2%A1Hola%20Portamor!'
+            }}>
               Conocer más
             </Button>
           </Box>

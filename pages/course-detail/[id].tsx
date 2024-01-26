@@ -1,19 +1,19 @@
 "use client";
 import React, { useState } from "react";
-import { ReduxProvider } from "@src/redux/provider";
+import { ReduxProvider } from "@src/modules/shared/redux/provider";
 import Image from "next/image";
 import { Box, Container, Tab, Tabs, Typography } from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import StarIcon from "@mui/icons-material/Star";
 
-import styles from "@src/components/CourseDetail/CourseDetail.module.css";
-import { useGetCourseDetailQuery } from "@src/services/courses.service";
-import { useAppSelector } from "@src/redux/hooks";
-import { TabPanel } from "@src/components/CourseDetail/TabPanel/TabPanel";
-import { GeneralVision } from "@src/components/CourseDetail/GeneralVision/GeneralVision";
-import { FYQ } from "@src/components/CourseDetail/FYQ/FYQ";
-import { CourseDetailCard } from "@src/components/CourseDetail/CourseDetailCard/CourseDetailCard";
-import { ReviewCard } from "@src/components/CourseDetail/ReviewCard/ReviewCard";
+import styles from "@src/modules/courseDetail/components/CourseDetail.module.css";
+import { useGetCourseDetailQuery } from "@src/modules/courses/services/courses.service";
+import { useAppSelector } from "@src/modules/shared/redux/hooks";
+import { TabPanel } from "@src/modules/courseDetail/components/TabPanel/TabPanel";
+import { GeneralVision } from "@src/modules/courseDetail/components/GeneralVision/GeneralVision";
+import { FYQ } from "@src/modules/courseDetail/components/FYQ/FYQ";
+import { CourseDetailCard } from "@src/modules/courseDetail/components/CourseDetailCard/CourseDetailCard";
+import { ReviewCard } from "@src/modules/courseDetail/components/ReviewCard/ReviewCard";
 import Link from "next/link";
 
 export default function CourseDetail({ courseId }) {
@@ -92,7 +92,7 @@ export default function CourseDetail({ courseId }) {
               <Tab
                 label='Ir a clases'
                 value='/trash'
-                href={{ pathname: "/dashboard" }}
+                href={{ pathname: `/course/${courseId}/${data.sections[0].videos[0].id}` }}
                 component={Link}
               />
             )}

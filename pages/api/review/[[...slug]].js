@@ -8,6 +8,7 @@ export default function handler(req, res) {
     return
   }
 
+  // Reviews By ID
   if (slug[0]) {
     res.status(200).json({
       data: [
