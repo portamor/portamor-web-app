@@ -150,7 +150,7 @@ export const OurPrograms = () => {
                   <Image
                     src={x.urlImage}
                     alt={x.title}
-                    fill={true}
+                    fill
                     style={{ objectFit: "cover" }}
                   />
                 </Box>

@@ -12,7 +12,7 @@ import Head from "next/head";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Layout from "@src/modules/shared/components/layout";
 import { ReactElement } from "react";
-import { OurRecognition } from "@src/modules/landing/components/OurRecognition/OurRecognition";
+import { OurRecognitions } from "@src/modules/landing/components/OurRecognitions/OurRecognitions";
 
 export default function Home() {
   return (
@@ -89,7 +89,7 @@ export default function Home() {
         <OurMemberShips />
         <FormRegister />
         <OurAccomplishments />
-        <OurRecognition />
+        <OurRecognitions />
       </Container>
     </>
   );

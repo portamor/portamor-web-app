@@ -10,9 +10,10 @@ declare module "@mui/material/styles" {
   }
   export interface Palette {
     custom: {
-      greyF4: string;
-      black0B: string;
-    };
+      greyF4: string
+      black0B: string
+      pinkF3: string
+    }
   }
 }
 
@@ -35,8 +36,9 @@ export const getTheme = (): ThemeOptions => {
     custom: {
       greyF4: "#F4F5F7",
       black0B: "#0B0D17",
+      pinkF3: "#F39F9F",
     },
-  };
+  }
   return {
     palette: {
       ...colors,

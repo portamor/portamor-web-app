@@ -4,6 +4,7 @@ import logo360 from "@public/360.svg";
 import { Box, Button, Container, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { BannerOpinion } from "../BannerOpinion/BannerOpinion";
+import { BoxBackground } from "./styled";
 
 export const Banner = () => {
   const OPINIONS = [
@@ -26,6 +27,7 @@ export const Banner = () => {
   return (
     <Box p={4} sx={{ height: 705, overflow: "hidden" }}>
       <Container maxWidth='lg' sx={{ position: "relative" }}>
+        <BoxBackground />
         <Image
           src={banner}
           height={700}

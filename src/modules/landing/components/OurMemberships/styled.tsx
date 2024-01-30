@@ -46,6 +46,6 @@ export const BoxCircle = styled(Box)<BoxProps>(({ theme }) => ({
   display: "grid",
   placeContent: "center",
   zIndex: -1,
-  background: "#F39F9F",
+  background: theme.palette.custom.pinkF3,
   borderRadius: "50%",
 })) as typeof Box;

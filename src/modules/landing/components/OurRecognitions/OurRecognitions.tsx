@@ -8,36 +8,34 @@ import Button from '@mui/material/Button';
 import { Box, Typography } from "@mui/material";
 
 import 'react-multi-carousel/lib/styles.css';
-import apnoticias from "@public/Recognition/apnoticias.png";
-import clubleones from "@public/Recognition/clubleones.png";
-import comunidaria from "@public/Recognition/comunidaria.png";
-import constanciaMinedu from "@public/Recognition/constanciaMinedu.png";
-import cronicasdeportamorojo from "@public/Recognition/cronicasdeportamorojo.png";
-import elperuano from "@public/Recognition/elperuano.png";
-import emprendeUP from "@public/Recognition/emprendeUP.jpg";
-import eyng from "@public/Recognition/eyng.png";
-import findhealthclinics from "@public/Recognition/findhealthclinics.png";
-import henry from "@public/Recognition/henry.png";
-import incubaUNACH from "@public/Recognition/incubaUNACH.jpg";
-import juntaplateada from "@public/Recognition/juntaplateada.png";
-import nativa from "@public/Recognition/nativa.png";
-import newmonitor from "@public/Recognition/newmonitor.png";
-import ojo1  from "@public/Recognition/ojo1.png";
-import ojo2 from "@public/Recognition/ojo2.png";
-import peru21 from "@public/Recognition/peru21.png";
-import radiofama from "@public/Recognition/radiofama.png";
-import radionacional from "@public/Recognition/radionacional.png";
-import rcc from "@public/Recognition/rcc.png";
-import revistasaludyfamilia from "@public/Recognition/revistasaludyfamilia.png";
-import tacnainnova from "@public/Recognition/tacnainnova.png";
-import turistech from "@public/Recognition/turistech.png";
-import uno from "@public/Recognition/uno.png";
-import upn from "@public/Recognition/upn.png";
-import UPTincuba from "@public/Recognition/UPTincuba.jpg";
-import { log } from 'console';
+import apnoticias from "@public/recognitions/apnoticias.png";
+import clubleones from "@public/recognitions/clubleones.png";
+import comunidaria from "@public/recognitions/comunidaria.png";
+import constanciaMinedu from "@public/recognitions/constanciaMinedu.png";
+import findhealthclinics from "@public/recognitions/findhealthclinics.png";
+import cronicasdeportamorojo from "@public/recognitions/cronicasdeportamorojo.png";
+import elperuano from "@public/recognitions/elperuano.png";
+import emprendeUP from "@public/recognitions/emprendeUP.jpg";
+import eyng from "@public/recognitions/eyng.png";
+import henry from "@public/recognitions/henry.png";
+import incubaUNACH from "@public/recognitions/incubaUNACH.jpg";
+import juntaplateada from "@public/recognitions/juntaplateada.png";
+import nativa from "@public/recognitions/nativa.png";
+import newmonitor from "@public/recognitions/newmonitor.png";
+import ojo1  from "@public/recognitions/ojo1.png";
+import ojo2 from "@public/recognitions/ojo2.png";
+import peru21 from "@public/recognitions/peru21.png";
+import radiofama from "@public/recognitions/radiofama.png";
+import radionacional from "@public/recognitions/radionacional.png";
+import rcc from "@public/recognitions/rcc.png";
+import revistasaludyfamilia from "@public/recognitions/revistasaludyfamilia.png";
+import tacnainnova from "@public/recognitions/tacnainnova.png";
+import turistech from "@public/recognitions/turistech.png";
+import uno from "@public/recognitions/uno.png";
+import upn from "@public/recognitions/upn.png";
+import UPTincuba from "@public/recognitions/UPTIncuba.jpg";
 
-
-export const OurRecognition: React.FC = () => {
+export const OurRecognitions: React.FC = () => {
 
   const responsive = {
     desktop: {
@@ -188,7 +186,7 @@ export const OurRecognition: React.FC = () => {
       title: "Revista Salud y Familia",
       subtitle: "“Portamor”: escuela de bienestar integral que empodera a adultos",
       /*content: "Finalistas a nivel nacional del evento más importante y de mayor exposición sobre el emprendimiento social en el Perú",*/
-      urlImage: findhealthclinics.src,
+      urlImage: revistasaludyfamilia.src,
       knowMore: "https://www.revistasaludyfamilia.com/portamor-escuela-de-bienestar-integral-que-empodera-a-adultos-mayores/"
     },
     {
@@ -227,8 +225,6 @@ export const OurRecognition: React.FC = () => {
       knowMore: "https://www.youtube.com/watch?v=hF6nGuqZTZ0"
     },   
   ]
-
-  console.log(items);
 
   return (
     <Box mt={5}>
