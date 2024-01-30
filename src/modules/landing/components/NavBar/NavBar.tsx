@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import logo from "@public/logo.png";
+import { Link as RouterLink } from "react-router-dom";
 
 const navItems = ["Programas", "Membresía", "Logros", "Sobre Nosotros"];
 
@@ -39,6 +40,12 @@ export default function NavBar() {
             ))} */}
             <Link href='http://18.219.152.230' underline='hover' color='black' mx={1}>
               Cursos
+            </Link>
+            <Link href="/proyectos">
+              Proyectos
+            </Link>
+            <Link href='/talleres' underline='hover' color='black' mx={1}>
+              Talleres
             </Link>
           </Box>
           <Box>
