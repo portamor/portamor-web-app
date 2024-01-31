@@ -28,79 +28,71 @@ import legals from "@public/benefits/legals.jpg";
 import technology from "@public/benefits/technology.jpg";
 import therapy from "@public/benefits/therapy.jpg";
 
+import CastilloLince from "@public/projects/castillo-lince.png";
+import curso from "@public/projects/curso.webp";
+import estadionacional from "@public/projects/estadionacional.jpg";
+import estadionacionalportamorweb from "@public/projects/estadionacionalportamorweb.webp";
+import estadionacionalportamor from "@public/projects/estadionacionalportamor.jpg";
+import grupoportamor from "@public/projects/grupoportamor.webp";
+import miraflores from "@public/projects/miraflores.webp";
+import portamorestadionacional from "@public/projects/portamorestadionacional.jpg";
+import portamorgrupo from "@public/projects/portamorgrupo.png";
+
 export const Projects: React.FC = () => {
 
   
 const dataServices = [
   {
     title: "Risoterapia",
-    urlImage: therapy,
+    urlImage: CastilloLince,
     content:
       "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Estimulación cognitiva",
-    urlImage: estimulation,
+    urlImage: curso,
     content:
       "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Aspectos legales",
-    urlImage: legals,
+    urlImage: estadionacional,
     content:
       "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Tecnología",
-    urlImage: technology,
+    urlImage: estadionacionalportamorweb,
     content:
       "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Risoterapia",
-    urlImage: therapy,
+    urlImage: estadionacionalportamor,
     content:
       "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Estimulación cognitiva",
-    urlImage: estimulation,
+    urlImage: grupoportamor,
     content:
       "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Aspectos legales",
-    urlImage: legals,
+    urlImage: miraflores,
     content:
       "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Tecnología",
-    urlImage: technology,
+    urlImage: portamorestadionacional,
     content:
       "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Risoterapia",
-    urlImage: therapy,
-    content:
-      "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
-  },
-  {
-    title: "Estimulación cognitiva",
-    urlImage: estimulation,
-    content:
-      "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
-  },
-  {
-    title: "Aspectos legales",
-    urlImage: legals,
-    content:
-      "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
-  },
-  {
-    title: "Tecnología",
-    urlImage: technology,
+    urlImage: portamorgrupo,
     content:
       "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
