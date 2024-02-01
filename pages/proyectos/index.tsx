@@ -100,10 +100,19 @@ const dataServices = [
 
   return (
     <Layout>
+      <Typography
+        variant='h4'
+        component='h2'
+        fontWeight={(theme) => theme.typography.fontWeightBold}
+        textAlign='center'
+        mb={5}
+      >
+        Nuestros Proyectos
+      </Typography>
       <Stack direction={"row"}  spacing={2} display="flex" justifyContent="center" flexWrap="wrap">
         {/*<div style={{ display: 'flex', flexWrap: 'wrap',  alignItems: 'center', justifyContent: 'center' }}>*/}
           {dataServices.map((x, i) => (
-            <Card key={i} sx={{ maxWidth: 300 }}>
+            <Card key={i} sx={{ width: 300 }}>
             <CardActionArea>
               <CardMedia sx={{ height: 280 }}>
                 <Box position='relative' height='100%' width='100%'>
@@ -112,17 +121,18 @@ const dataServices = [
                     alt={x.title}
                     fill
                     style={{ objectFit: "cover" }}
+                    sizes='(max-width: 600px) 100vw, 600px'
                   />
                 </Box>
               </CardMedia>
-              <CardContent>
+              {/*<CardContent>
                 <Typography gutterBottom variant='body2' component='div'>
                   {x.title}
                 </Typography>
                 <Typography variant='body2' color='text.secondary'>
                   {x.content}
                 </Typography>
-              </CardContent>
+              </CardContent>*/}
             </CardActionArea>
             <CardActions sx={{ justifyContent: "center", mb: 2 }}>
               <Button
