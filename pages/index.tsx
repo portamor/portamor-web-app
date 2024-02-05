@@ -13,6 +13,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Layout from "@src/modules/shared/components/layout";
 import { ReactElement } from "react";
 import { OurRecognitions } from "@src/modules/landing/components/OurRecognitions/OurRecognitions";
+import { OurProjects } from "@src/modules/landing/components/OurProjects/OurProjects";
 
 export default function Home() {
   return (
@@ -90,6 +91,7 @@ export default function Home() {
         <FormRegister />
         <OurAccomplishments />
         <OurRecognitions />
+        <OurProjects/>
       </Container>
     </>
   );

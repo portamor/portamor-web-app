@@ -3,13 +3,12 @@ import {
   Box,
   Button,
   Container,
-  Link,
   Toolbar,
   Typography,
 } from "@mui/material";
 import Image from "next/image";
 import logo from "@public/logo.png";
-import { Link as RouterLink } from "react-router-dom";
+import Link from 'next/link';
 
 const navItems = ["Programas", "Membresía", "Logros", "Sobre Nosotros"];
 
@@ -25,19 +24,17 @@ export default function NavBar() {
             alignItems: "center",
           }}
         >
-          <Typography variant='h6' color='black' component='div'>
-            <Image src={logo} alt='logo portamor' />
-          </Typography>
+          <Link href='/'>
+            <Typography variant='h6' color='black' component='div'>
+              <Image src={logo} alt='logo portamor' />
+            </Typography>
+          </Link>
           <Box
+            width='50%'
             display='flex'
-            alignItems='center'
+            justifyContent='space-around'
             sx={{ fontSize: (theme) => theme.typography.body2 }}
           >
-            {/* {navItems.map((item) => (
-              <Link href='#' underline='hover' color='black' key={item} mx={1}>
-                {item}
-              </Link>
-            ))} */}
             <Link href='http://18.219.152.230' underline='hover' color='black' mx={1}>
               Cursos
             </Link>
