@@ -110,7 +110,6 @@ const dataServices = [
         Nuestros Proyectos
       </Typography>
       <Stack direction={"row"}  spacing={2} display="flex" justifyContent="center" flexWrap="wrap">
-        {/*<div style={{ display: 'flex', flexWrap: 'wrap',  alignItems: 'center', justifyContent: 'center' }}>*/}
           {dataServices.map((x, i) => (
             <Card key={i} sx={{ width: 300 }}>
             <CardActionArea>
@@ -125,14 +124,6 @@ const dataServices = [
                   />
                 </Box>
               </CardMedia>
-              {/*<CardContent>
-                <Typography gutterBottom variant='body2' component='div'>
-                  {x.title}
-                </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                  {x.content}
-                </Typography>
-              </CardContent>*/}
             </CardActionArea>
             <CardActions sx={{ justifyContent: "center", mb: 2 }}>
               <Button
@@ -149,7 +140,6 @@ const dataServices = [
             </CardActions>
           </Card>
           ))}
-        {/*</div>*/}
       </Stack>
     </Layout>
   );
