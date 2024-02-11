@@ -52,7 +52,11 @@ export default function NavBar({ headerlinks=true }) {
           {
             headerlinks && (
               <Box>
-                <Button variant='contained'>Registrarse</Button>
+                <Button variant='contained'>
+                  <Link href='/registrarse'>
+                    Registrarse
+                  </Link>
+                </Button>
               </Box>
             )
           }

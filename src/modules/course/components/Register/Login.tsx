@@ -21,7 +21,7 @@ interface FormValues {
     repeatPassword: string;
 }
 
-const LoginForm = () => {
+const LoginForm = ({ repeatPasswordOption=false }) => {
     const {
         register,
         handleSubmit,
@@ -89,16 +89,19 @@ const LoginForm = () => {
                         margin="none"
                         {...register("password")}
                     />
+
+                    {repeatPasswordOption && (
+                        <TextField
+                            id="txtRepeatPassword"
+                            label="Repetir contraseña"
+                            type="password"
+                            error={Boolean(errors.repeatPassword)}
+                            helperText={errors.repeatPassword?.message}
+                            margin="none"
+                            {...register("repeatPassword")}
+                        />
+                    )}
                     
-                    <TextField
-                        id="txtRepeatPassword"
-                        label="Repetir contraseña"
-                        type="password"
-                        error={Boolean(errors.repeatPassword)}
-                        helperText={errors.repeatPassword?.message}
-                        margin="none"
-                        {...register("repeatPassword")}
-                    />
                     <Box textAlign="center" mt={2}>
                         <Button size="large" variant="contained" type="submit">
                             Iniciar sesión
