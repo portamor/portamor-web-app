@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 const navItems = ["Programas", "Membresía", "Logros", "Sobre Nosotros"];
 
-export default function NavBar() {
+export default function NavBar({ headerlinks=true }) {
   return (
     <AppBar position='fixed' component='nav'>
       <Toolbar sx={{ backgroundColor: "white" }}>
@@ -29,25 +29,33 @@ export default function NavBar() {
               <Image src={logo} alt='logo portamor' />
             </Typography>
           </Link>
-          <Box
-            width='50%'
-            display='flex'
-            justifyContent='space-around'
-            sx={{ fontSize: (theme) => theme.typography.body2 }}
-          >
-            <Link href='http://18.219.152.230' underline='hover' color='black' mx={1}>
-              Cursos
-            </Link>
-            <Link href="/proyectos">
-              Proyectos
-            </Link>
-            <Link href='/talleres' underline='hover' color='black' mx={1}>
-              Talleres
-            </Link>
-          </Box>
-          <Box>
-            <Button variant='contained'>Registrarse</Button>
-          </Box>
+          {
+            headerlinks && (
+            <Box
+              width='50%'
+              display='flex'
+              justifyContent='space-around'
+              sx={{ fontSize: (theme) => theme.typography.body2 }}
+            >
+              <Link href='http://18.219.152.230' underline='hover' color='black' mx={1}>
+                Cursos
+              </Link>
+              <Link href="/proyectos">
+                Proyectos
+              </Link>
+              <Link href='/talleres' underline='hover' color='black' mx={1}>
+                Talleres
+              </Link>
+            </Box>
+            )
+          }
+          {
+            headerlinks && (
+              <Box>
+                <Button variant='contained'>Registrarse</Button>
+              </Box>
+            )
+          }
         </Container>
       </Toolbar>
     </AppBar>
