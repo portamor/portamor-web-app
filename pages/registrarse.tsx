@@ -7,12 +7,12 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import FormRegister from '@src/modules/course/components/Register/Register'
 import LoginForm from '@src/modules/course/components/Register/Login'
-import Layout from '@src/modules/shared/components/layout';
 import Link from 'next/link';
+import { LandingLayout } from '@src/modules/shared/components';
 
 const steps = ['Datos Generales', 'Crear Cuenta'];
 
-export default function HorizontalLinearStepper() {
+export default function RegisterPage() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set<number>());
 
@@ -59,7 +59,7 @@ export default function HorizontalLinearStepper() {
   };
 
   return (
-    <Layout headerlinks={false}>
+    <>
       <Box sx={{ width: '100%' }}>
         <Stepper activeStep={activeStep}>
           {steps.map((label, index) => {
@@ -115,6 +115,10 @@ export default function HorizontalLinearStepper() {
           Iniciar sesión
         </Link>
       </Box>
-    </Layout>
+    </>
   );
 }
+
+RegisterPage.getLayout = function getLayout(page: React.ReactElement) {
+  return <LandingLayout>{page}</LandingLayout>;
+};

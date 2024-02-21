@@ -8,7 +8,7 @@ import { CourseCard } from "@src/modules/courses/components";
 import { useGetCoursesQuery } from "@src/modules/courses/services/courses.service";
 import { useState } from "react";
 
-export default function Courses() {
+export default function CoursesPage() {
   const [currentGenreId, setCurrentGenreId] = useState("all");
   const { data: courses } = useGetCoursesQuery({ page: 1, genre: currentGenreId })
 
@@ -87,6 +87,6 @@ export default function Courses() {
   );
 }
 
-Courses.getLayout = function getLayout(page) {
+CoursesPage.getLayout = function getLayout(page) {
   return <ReduxProvider>{page}</ReduxProvider>;
 };

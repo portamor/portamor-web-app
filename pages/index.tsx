@@ -10,11 +10,11 @@ import {
 } from "@src/modules/landing/components";
 import Head from "next/head";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Layout from "@src/modules/shared/components/layout";
 import { ReactElement } from "react";
 import { OurRecognitions } from "@src/modules/landing/components/OurRecognitions/OurRecognitions";
 import { OurProjects } from "@src/modules/landing/components/OurProjects/OurProjects";
 import { OurTallers } from "@src/modules/landing/components/OurTallers/OurTallers";
+import { LandingLayout } from "@src/modules/shared/components";
 
 export default function Home() {
   return (
@@ -98,5 +98,5 @@ export default function Home() {
 }
 
 Home.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <LandingLayout>{page}</LandingLayout>;
 };
