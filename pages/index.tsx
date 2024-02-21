@@ -52,21 +52,19 @@ export default function Home() {
             textAlign='center'
             mb={3}
           >
-            Propósito{" "}
+            Portamor{" "}
             <Typography
               variant='inherit'
               component='span'
               color={(theme) => theme.palette.primary.main}
             >
-              Portamor
+              Primera Escuela Integral del adulto mayor
             </Typography>
           </Typography>
           <Box display='flex' justifyContent='center' alignItems='end'>
             <Typography variant='body2' mr={2} width='calc(100% - 200px)'>
-              Empoderar a más adultos mayores hacia un envejecimiento activo y
-              saludable para fortalecer la salud física, mental y social que
-              venimos compartiendo y construyendo con nuestra comunidad
-              portamor.
+            Plataforma que promueve el envejecimiento activo y saludable e
+            involucra a la familia a una vida plena, activa y conectada.
               <br />
               <Link
                 href='https://www.youtube.com/watch?v=2BYMUkh-jRY&ab_channel=Portamor%F0%9F%92%9FComunidaddeadultosmayores'
