@@ -8,7 +8,6 @@ import Box from '@mui/material/Box';
 
 
 const Register: React.FC = () => {
-
   return (
     <Layout headerlinks={false}>
       <LoginForm/>
@@ -22,5 +21,3 @@ const Register: React.FC = () => {
     </Layout>
   )
 }
-
-export default Register;

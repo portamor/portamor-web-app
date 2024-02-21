@@ -5,30 +5,40 @@ import {
   Container,
   Toolbar,
   Typography,
+  Link as MuiLink,
 } from "@mui/material";
 import Image from "next/image";
 import logo from "@public/logo.png";
 import Link from 'next/link';
 
-const navItems = ["Programas", "Membresía", "Logros", "Sobre Nosotros"];
+const navItems = [
+  { href: "#", name: "Programas" },
+  { href: "#", name: "Membresía" },
+  { href: "#", name: "Logros" },
+  { href: "#", name: "Sobre Nosotros" },
+]
 
-export default function NavBar({ headerlinks=true }) {
+interface NavBarProps {
+  headerlinks: boolean
+}
+
+export default function NavBar({ headerlinks }: NavBarProps) {
   return (
-    <AppBar position='fixed' component='nav'>
+    <AppBar position="fixed" component="nav">
       <Toolbar sx={{ backgroundColor: "white" }}>
         <Container
-          maxWidth='lg'
+          maxWidth="lg"
           sx={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
-          <Link href='/'>
+          <MuiLink component={Link} href='/'>
             <Typography variant='h6' color='black' component='div'>
               <Image src={logo} alt='logo portamor' />
             </Typography>
-          </Link>
+          </MuiLink>
           {
             headerlinks && (
             <Box
@@ -37,15 +47,15 @@ export default function NavBar({ headerlinks=true }) {
               justifyContent='space-around'
               sx={{ fontSize: (theme) => theme.typography.body2 }}
             >
-              <Link href='http://18.219.152.230' underline='hover' color='black' mx={1}>
+              <MuiLink component={Link} href='http://18.219.152.230' underline='hover' color='black' mx={1}>
                 Cursos
-              </Link>
-              <Link href="/proyectos">
+              </MuiLink>
+                <MuiLink component={Link} href="/proyectos">
                 Proyectos
-              </Link>
-              <Link href='/talleres' underline='hover' color='black' mx={1}>
+              </MuiLink>
+              <MuiLink component={Link}  href='/talleres' underline='hover' color='black' mx={1}>
                 Talleres
-              </Link>
+              </MuiLink>
             </Box>
             )
           }
@@ -53,9 +63,9 @@ export default function NavBar({ headerlinks=true }) {
             headerlinks && (
               <Box>
                 <Button variant='contained'>
-                  <Link href='/registrarse'>
+                  <MuiLink component={Link} href='/registrarse'>
                     Registrarse
-                  </Link>
+                  </MuiLink>
                 </Button>
               </Box>
             )
@@ -63,5 +73,5 @@ export default function NavBar({ headerlinks=true }) {
         </Container>
       </Toolbar>
     </AppBar>
-  );
+  )
 }
