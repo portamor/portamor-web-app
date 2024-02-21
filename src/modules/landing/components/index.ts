@@ -3,7 +3,6 @@ export * from './BannerOpinion/BannerOpinion';
 export * from './BannerOpinion/styled';
 export * from './Footer/Footer';
 export * from './FormRegister/FormRegister';
-export * from './NavBar/NavBar';
 export * from './OurAccomplishments/OurAccomplishments';
 export * from './OurAdvantages/OurAdvantages';
 export * from './OurBenefits/OurBenefits';
