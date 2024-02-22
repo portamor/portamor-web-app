@@ -26,7 +26,9 @@ export const OurBenefits = () => {
         Beneficios
       </Typography>
       <Box>
-        <Stack direction='row' justifyContent='center' spacing={10}>
+        <Stack justifyContent='center' direction={{ xs: 'column', sm: 'row' }}
+                                                                             spacing={{ xs: 1, sm: 2, md: 4 }}
+                                                                             >
           {benefits.map((x, i) => (
             <Paper key={i} sx={{ textAlign: "center" }} elevation={0}>
               <Image src={x.urlImage} alt={x.title} />
