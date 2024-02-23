@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format:fix": "prettier --write",
+    "format:fix": "prettier . --write",
     "prepare": "husky"
   },
   "lint-staged": {
