@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
 
 interface UserState {
-  admin: boolean;
-  isLoggedIn: boolean;
-  pageSize: number;
-  id: string;
-  name: string;
+  admin: boolean
+  isLoggedIn: boolean
+  pageSize: number
+  id: string
+  name: string
 }
 
 const initialState: UserState = {
@@ -13,15 +13,15 @@ const initialState: UserState = {
   isLoggedIn: true,
   pageSize: 8,
   id: "2",
-  name: "Pepito"
-};
+  name: "Pepito",
+}
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {}
-});
+  reducers: {},
+})
 
-export const {} = userSlice.actions;
+export const {} = userSlice.actions
 
-export default userSlice.reducer;
+export default userSlice.reducer

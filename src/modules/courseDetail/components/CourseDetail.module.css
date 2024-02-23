@@ -8,7 +8,7 @@
   border-bottom: solid 2px rgba(203, 202, 202, 0.73);
 }
 
-.modales-courses{
+.modales-courses {
   margin-top: -8%;
   margin-right: 65%;
   margin-left: 15%;
@@ -22,7 +22,6 @@
   display: flex;
   flex-direction: column;
 }
-
 
 .course-detail-head-container {
   display: flex;
@@ -131,13 +130,11 @@
   margin-bottom: 20px;
 }
 
-
 @media (max-width: 1300px) {
   .buttons-select-container {
     width: 100%;
   }
 }
-
 
 .buttons-container {
   width: 100%;
@@ -154,12 +151,12 @@
   }
 }
 
-.selected-button, 
+.selected-button,
 .button-not-selected,
 .link-classes-button {
   background-color: transparent;
   border: none;
-  border-top: solid 5px #EB575A;
+  border-top: solid 5px #eb575a;
   cursor: pointer;
   font-size: 18px;
   height: fit-content;
@@ -179,13 +176,13 @@
 }
 
 @media (max-width: 990px) {
-  .selected-button, 
+  .selected-button,
   .button-not-selected {
     min-width: 0;
     width: fit-content;
     padding: 15px 30px;
   }
-  
+
   .link-classes-button {
     min-width: 260px;
     padding: 15px 30px;
@@ -193,7 +190,7 @@
   }
 }
 @media (max-width: 1300px) {
-  .selected-button, 
+  .selected-button,
   .button-not-selected {
     min-width: 320px;
   }
@@ -202,7 +199,6 @@
 .course-detail-container {
   display: flex;
 }
-
 
 .course-detail-info-container {
   display: flex;

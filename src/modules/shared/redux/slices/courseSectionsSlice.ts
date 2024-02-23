@@ -1,14 +1,14 @@
-import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { RequestType } from "@src/modules/shared/const/request";
-import { SectionState } from "../interfaces";
-import { RootState } from "../store";
-import { FindGetCourseSections } from "@src/modules/courses/types/dtos";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { RequestType } from "@src/modules/shared/const/request"
+import { SectionState } from "../interfaces"
+import { RootState } from "../store"
+import { FindGetCourseSections } from "@src/modules/courses/types/dtos"
 
 const initialState: SectionState = {
   status: RequestType.Idle,
   error: null,
   data: null,
-};
+}
 
 /* export const fetchGetCourseSections = createAsyncThunk<
   FindGetCourseSections,
@@ -23,7 +23,7 @@ export const courseSectionsSlice = createSlice({
   name: "courseSections",
   initialState,
   reducers: {},
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     /* builder.addCase(fetchGetCourseSections.pending, (state: SectionState) => {
       state.status = RequestType.Pending;
     });
@@ -42,8 +42,8 @@ export const courseSectionsSlice = createSlice({
       }
     ); */
   },
-});
+})
 
-export const {} = courseSectionsSlice.actions;
+export const {} = courseSectionsSlice.actions
 
-export default courseSectionsSlice.reducer;
+export default courseSectionsSlice.reducer

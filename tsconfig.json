@@ -17,15 +17,9 @@
     "paths": {
       "@src/*": ["src/*"],
       "@public/*": ["public/*"],
-      "@test/*": ["src/test/*"]
-    }
+      "@test/*": ["src/test/*"],
+    },
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
 }

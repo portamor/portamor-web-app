@@ -1,30 +1,30 @@
-import { Course, Courses, Instructor, Review, Section, User } from "@src/modules/shared/models";
+import { Course, Courses, Instructor, Review, Section, User } from "@src/modules/shared/models"
 
 export interface FindUsersByCourseId {
-  data: User[];
+  data: User[]
 }
 
 export interface FindInstructorId {
-  data: Instructor;
+  data: Instructor
 }
 
 export interface FindCourses {
-  data: Courses;
+  data: Courses
 }
 
 export interface FindCourse {
-  data: Course;
+  data: Course
 }
 
 export interface FindCoursesByGenre {
-  data: Courses;
+  data: Courses
 }
 
 export interface FindGetCourseSections {
-  data: Section[];
+  data: Section[]
 }
 
 // No se usa
 export interface FindGetReviewsByCourseId {
-  data: Review[];
+  data: Review[]
 }

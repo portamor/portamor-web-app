@@ -1,13 +1,7 @@
-import {
-  AppBar,
-  Container,
-  Toolbar,
-  Typography,
-  Link as MuiLink,
-} from "@mui/material";
-import Image from "next/image";
-import logo from "@public/logo.png";
-import Link from 'next/link';
+import { AppBar, Container, Toolbar, Typography, Link as MuiLink } from "@mui/material"
+import Image from "next/image"
+import logo from "@public/logo.png"
+import Link from "next/link"
 
 export const CoursesNavBar = () => {
   return (
@@ -21,9 +15,9 @@ export const CoursesNavBar = () => {
             alignItems: "center",
           }}
         >
-          <MuiLink component={Link} href='/'>
-            <Typography variant='h6' color='black' component='div'>
-              <Image src={logo} alt='logo portamor' />
+          <MuiLink component={Link} href="/">
+            <Typography variant="h6" color="black" component="div">
+              <Image src={logo} alt="logo portamor" />
             </Typography>
           </MuiLink>
         </Container>

@@ -1,15 +1,7 @@
-import {
-  AppBar,
-  Box,
-  Button,
-  Container,
-  Toolbar,
-  Typography,
-  Link as MuiLink,
-} from "@mui/material";
-import Image from "next/image";
-import logo from "@public/logo.png";
-import Link from 'next/link';
+import { AppBar, Box, Button, Container, Toolbar, Typography, Link as MuiLink } from "@mui/material"
+import Image from "next/image"
+import logo from "@public/logo.png"
+import Link from "next/link"
 
 export const LandingNavBar = () => {
   return (
@@ -23,29 +15,29 @@ export const LandingNavBar = () => {
             alignItems: "center",
           }}
         >
-          <MuiLink component={Link} href='/'>
-            <Typography variant='h6' color='black' component='div'>
-              <Image src={logo} alt='logo portamor' />
+          <MuiLink component={Link} href="/">
+            <Typography variant="h6" color="black" component="div">
+              <Image src={logo} alt="logo portamor" />
             </Typography>
           </MuiLink>
           <Box
-            width='50%'
-            display='flex'
-            justifyContent='space-around'
-            sx={{ fontSize: (theme) => theme.typography.body2 }}
+            width="50%"
+            display="flex"
+            justifyContent="space-around"
+            sx={{ fontSize: theme => theme.typography.body2 }}
           >
-            <MuiLink component={Link} href='http://18.219.152.230' underline='hover' color='black' mx={1}>
+            <MuiLink component={Link} href="http://18.219.152.230" underline="hover" color="black" mx={1}>
               Cursos
             </MuiLink>
             <MuiLink component={Link} href="/proyectos">
               Proyectos
             </MuiLink>
-            <MuiLink component={Link} href='/talleres' underline='hover' color='black' mx={1}>
+            <MuiLink component={Link} href="/talleres" underline="hover" color="black" mx={1}>
               Talleres
             </MuiLink>
           </Box>
           <Box>
-            <Button variant='contained' LinkComponent={Link} href="/registrarse">
+            <Button variant="contained" LinkComponent={Link} href="/registrarse">
               Registrarse
             </Button>
           </Box>

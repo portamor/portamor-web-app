@@ -1,15 +1,15 @@
-"use client";
-import { Container, Grid } from "@mui/material";
-import { ReduxProvider } from "@src/modules/shared/redux/provider";
+"use client"
+import { Container, Grid } from "@mui/material"
+import { ReduxProvider } from "@src/modules/shared/redux/provider"
 
 //import { Paginated } from "@src/components/Migration/Components";
-import NavFilter from "@src/modules/courses/components/NavFilter/NavFilter";
-import { CourseCard } from "@src/modules/courses/components";
-import { useGetCoursesQuery } from "@src/modules/courses/services/courses.service";
-import { useState } from "react";
+import NavFilter from "@src/modules/courses/components/NavFilter/NavFilter"
+import { CourseCard } from "@src/modules/courses/components"
+import { useGetCoursesQuery } from "@src/modules/courses/services/courses.service"
+import { useState } from "react"
 
 export default function CoursesPage() {
-  const [currentGenreId, setCurrentGenreId] = useState("all");
+  const [currentGenreId, setCurrentGenreId] = useState("all")
   const { data: courses } = useGetCoursesQuery({ page: 1, genre: currentGenreId })
 
   /* const [showModal, setShowModal] = useState(false);
@@ -61,22 +61,16 @@ export default function CoursesPage() {
   }
 
   if (!courses) {
-    return <>LOADING</>;
+    return <>LOADING</>
   }
   return (
-    <Container maxWidth='lg' sx={{ my: 4 }}>
+    <Container maxWidth="lg" sx={{ my: 4 }}>
       <NavFilter genre={currentGenreId} onUpdateGenre={handleUpdateGenre} />
       {courses.courses.length ? (
         <Grid container spacing={2}>
-          {courses.courses.map((el) => (
+          {courses.courses.map(el => (
             <Grid key={el.id} item xs={2}>
-              <CourseCard
-                id={el.id}
-                title={el.title}
-                image={el.image}
-                duration={el.duration}
-                level={el.level}
-              />
+              <CourseCard id={el.id} title={el.title} image={el.image} duration={el.duration} level={el.level} />
             </Grid>
           ))}
         </Grid>
@@ -84,9 +78,9 @@ export default function CoursesPage() {
         <h2>No se ha encontrado ningun curso</h2>
       )}
     </Container>
-  );
+  )
 }
 
 CoursesPage.getLayout = function getLayout(page) {
-  return <ReduxProvider>{page}</ReduxProvider>;
-};
+  return <ReduxProvider>{page}</ReduxProvider>
+}

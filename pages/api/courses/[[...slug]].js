@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default function handler(req, res) {
-  const { slug } = req.query;
+  const { slug } = req.query
 
   if (!slug) {
     res.status(200).json({
@@ -29,10 +29,10 @@ export default function handler(req, res) {
           totalPages: 1,
         },
       },
-    });
+    })
     return
   }
-  
+
   if (slug[0] === "genre") {
     /* FALTA */
   }
@@ -48,7 +48,7 @@ export default function handler(req, res) {
         materials: ["lápiz, papel"],
         rating: 5,
       },
-    });
+    })
   }
 
   if (slug[0] === "videos") {
@@ -62,6 +62,6 @@ export default function handler(req, res) {
           videoDescription: "Lorem description",
         },
       ],
-    });
+    })
   }
 }

@@ -1,10 +1,5 @@
-import Image from "next/image";
-import {
-  BoxMessage,
-  BoxMessageImg,
-  BoxMessageText,
-  TypographyText,
-} from "./styled";
+import Image from "next/image"
+import { BoxMessage, BoxMessageImg, BoxMessageText, TypographyText } from "./styled"
 
 interface Props {
   urlImage: string
@@ -15,16 +10,12 @@ interface Props {
 
 export const BannerOpinion = (props: Props) => (
   <BoxMessage data-position={props.position}>
-    <BoxMessageImg>
-      {/* <img src={props.urlImage} alt='photo' /> */}
-    </BoxMessageImg>
+    <BoxMessageImg>{/* <img src={props.urlImage} alt='photo' /> */}</BoxMessageImg>
     <BoxMessageText>
-      <TypographyText mb={1} fontWeight='fontWeightBold'>
+      <TypographyText mb={1} fontWeight="fontWeightBold">
         {props.name}
       </TypographyText>
-      <TypographyText fontWeight='inherit'>
-        {props.opinion}
-      </TypographyText>
+      <TypographyText fontWeight="inherit">{props.opinion}</TypographyText>
     </BoxMessageText>
   </BoxMessage>
-);
+)
