@@ -195,35 +195,35 @@ export const OurRecognitions: React.FC = () => {
       /*content: "Finalistas a nivel nacional del evento más importante y de mayor exposición sobre el emprendimiento social en el Perú",*/
       urlImage: peru21.src,
       knowMore: "https://peru21.pe/cheka/portamor-adultos-mayores-escuela-bienestar-portamor-escuela-de-bienestar-integral-que-empodera-a-adultos-mayores-noticia/"
-    },  
+    },
     {
       title: "ap noticias",
       subtitle: "“Portamor”: Escuela de bienestar integral que empodera a adultos mayores",
       /*content: "Finalistas a nivel nacional del evento más importante y de mayor exposición sobre el emprendimiento social en el Perú",*/
       urlImage: apnoticias.src,
       knowMore: "https://www.apnoticias.pe/peru/diario-peru21/portamor-escuela-de-bienestar-integral-que-empodera-a-adultos-mayores-1055393"
-    },  
+    },
     {
       title: "Radio Nacional",
       subtitle: "“Portamor”: Escuela de bienestar integral que empodera a adultos mayores",
       /*content: "Finalistas a nivel nacional del evento más importante y de mayor exposición sobre el emprendimiento social en el Perú",*/
       urlImage: radionacional.src,
       knowMore: "https://www.youtube.com/watch?v=TXOPuxZHGd8&ab_channel=RadioNacional"
-    },  
+    },
     {
       title: "Testinomio de Club de Leones",
       subtitle: "“Portamor”: Escuela de bienestar integral que empodera a adultos mayores",
       /*content: "Finalistas a nivel nacional del evento más importante y de mayor exposición sobre el emprendimiento social en el Perú",*/
       urlImage: clubleones.src,
       knowMore: "https://fb.watch/nA0gVRBf0D/?mibextid=RUbZ1f"
-    },  
+    },
     {
       title: "III Junta plateada",
       subtitle: "“Portamor”: Escuela de bienestar integral que empodera a adultos mayores",
       /*content: "Finalistas a nivel nacional del evento más importante y de mayor exposición sobre el emprendimiento social en el Perú",*/
       urlImage: juntaplateada.src,
       knowMore: "https://www.youtube.com/watch?v=hF6nGuqZTZ0"
-    },   
+    },
   ]
 
   return (
@@ -256,11 +256,11 @@ export const OurRecognitions: React.FC = () => {
       >
           {items.map((item, index) => (
             <div key={index}>
-              <Card sx={{ maxWidth: 345 }}>
+              <Card sx={{ maxWidth: 345, width: "100%" }}>
                 <CardMedia
-                  sx={{ height: 140 }}
-                  image={item.urlImage.toString()}
-                  title={item.title}
+                    sx={{ height: 140, maxWidth: "100%" }}
+                    image={item.urlImage.toString()}
+                    title={item.title}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">

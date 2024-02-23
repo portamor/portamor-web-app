@@ -48,7 +48,7 @@ export const OurAccomplishments = () => {
       >
         Nuestro Logros
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent="center">
         {accomplishments.map((x, i) => (
           <Grid item key={i} xs={3} display="flex">
             <Box

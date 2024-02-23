@@ -83,7 +83,7 @@ export const OurMemberShips = () => {
       </Typography>
       <Box sx={{ maxWidth: "1100px", margin: "0 auto", position: "relative" }}>
         <BoxCircle />
-        <Grid container spacing={3}>
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent="center">
           {memberships.map((x, i) => (
             <Grid item key={i} xs={3} textAlign='center' position='relative'>
               <CardItem data-important={x.important}>

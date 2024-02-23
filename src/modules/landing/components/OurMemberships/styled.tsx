@@ -37,8 +37,9 @@ export const CardItem = styled(Card)<CardProps>(({ theme }) => ({
 })) as typeof Card;
 
 export const BoxCircle = styled(Box)<BoxProps>(({ theme }) => ({
-  aspectRatio: 1/1,
-  height: "98%",
+  aspectRatio: 1 / 1,
+  width: "80vw", // Ajusta el ancho al 80% del ancho de la ventana
+  maxHeight: "80vh", // Ajusta la altura al 80% de la altura de la ventana
   position: "absolute",
   top: "50%",
   left: "50%",
