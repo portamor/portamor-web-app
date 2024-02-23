@@ -14,7 +14,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 
 import CastilloLince from "@public/projects/castillo-lince.png"
 import curso from "@public/projects/curso.webp"
-import estadionacional from "@public/projects/estadionacional.jpg"
+import estadionacional from "@public/projects/estadio-nacional.jpg"
 import estadionacionalportamorweb from "@public/projects/estadionacionalportamorweb.webp"
 import estadionacionalportamor from "@public/projects/estadionacionalportamor.jpg"
 import grupoportamor from "@public/projects/grupoportamor.webp"
