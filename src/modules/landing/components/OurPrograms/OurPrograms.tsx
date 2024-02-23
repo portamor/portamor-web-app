@@ -9,20 +9,20 @@ import {
   CardMedia,
   CardContent,
   Button,
-} from "@mui/material";
-import { useState } from "react";
-import { ProgramsTabs } from "./styled";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import estimulation from "@public/benefits/estimulation.jpg";
-import legals from "@public/benefits/legals.jpg";
-import technology from "@public/benefits/technology.jpg";
-import therapy from "@public/benefits/therapy.jpg";
-import Image from "next/image";
+} from "@mui/material"
+import { useState } from "react"
+import { ProgramsTabs } from "./styled"
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
+import estimulation from "@public/benefits/estimulation.jpg"
+import legals from "@public/benefits/legals.jpg"
+import technology from "@public/benefits/technology.jpg"
+import therapy from "@public/benefits/therapy.jpg"
+import Image from "next/image"
 
 interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
+  children?: React.ReactNode
+  index: number
+  value: number
 }
 
 const dataTabs = [
@@ -59,131 +59,114 @@ const dataTabs = [
       alimentación saludable es rico en fibra, así como frutas, verduras, cereales y legumbres, y evitamos 
       los alimentos procesados y altos en grasas saturadas y azúcares refinados.`,
   },
-];
+]
 
 const dataServices = [
   {
     title: "Risoterapia",
     urlImage: therapy,
-    content:
-        "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
+    content: "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Estimulación cognitiva",
     urlImage: estimulation,
-    content:
-        "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
+    content: "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Aspectos legales",
     urlImage: legals,
-    content:
-        "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
+    content: "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
   {
     title: "Tecnología",
     urlImage: technology,
-    content:
-        "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
+    content: "Empoderar a más adultos mayores hacia un envejecimiento activo y saludable para fortalecer la salud",
   },
-];
+]
 
 const TabPanel = (props: TabPanelProps) => {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, ...other } = props
   return (
-      <div
-          role='tabpanel'
-          hidden={value !== index}
-          id={`simple-tabpanel-${index}`}
-          aria-labelledby={`simple-tab-${index}`}
-          {...other}
-      >
-        {value === index && (
-            <Box sx={{ p: 3 }}>
-              <Typography variant='body2'>{children}</Typography>
-            </Box>
-        )}
-      </div>
-  );
-};
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography variant="body2">{children}</Typography>
+        </Box>
+      )}
+    </div>
+  )
+}
 
 export const OurPrograms = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0)
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+    setValue(newValue)
+  }
 
   return (
-      <Box>
-        <Typography
-            variant='h4'
-            component='h2'
-            fontWeight={(theme) => theme.typography.fontWeightBold}
-            textAlign='center'
-            mb={3}
-        >
-          Explora nuestros programas
-        </Typography>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <ProgramsTabs
-              value={value}
-              onChange={handleChange}
-              aria-label='programs tabs'
-          >
-            {dataTabs.map((x, i) => (
-                <Tab key={i} label={x.title} />
-            ))}
-          </ProgramsTabs>
-        </Box>
-        {dataTabs.map((x, i) => (
-            <TabPanel key={i} value={value} index={i}>
-              {x.content}
-            </TabPanel>
-        ))}
-        <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={{ xs: 1, sm: 2, md: 4 }}
-            justifyContent="center"
-        >
-          {dataServices.map((x, i) => (
-              <Card key={i}>
-                <CardActionArea>
-                  <CardMedia sx={{ height: 280 }}>
-                    <Box position='relative' height='100%' width='100%'>
-                      <Image
-                          src={x.urlImage}
-                          alt={x.title}
-                          fill
-                          style={{ objectFit: "cover" }}
-                      />
-                    </Box>
-                  </CardMedia>
-                  <CardContent>
-                    <Typography gutterBottom variant='body2' component='div'>
-                      {x.title}
-                    </Typography>
-                    <Typography variant='body2' color='text.secondary'>
-                      {x.content}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions sx={{ justifyContent: "center", mb: 2 }}>
-                  <Button
-                      variant='contained'
-                      size='small'
-                      color='primary'
-                      endIcon={<ArrowForwardIcon />}
-                      onClick={() => {
-                        window.location.href = 'https://api.whatsapp.com/send?phone=943203772&text=%C2%A1Hola%20Portamor!'
-                      }}
-                  >
-                    Unirse ahora
-                  </Button>
-                </CardActions>
-              </Card>
+    <Box>
+      <Typography
+        variant="h4"
+        component="h2"
+        fontWeight={theme => theme.typography.fontWeightBold}
+        textAlign="center"
+        mb={3}
+      >
+        Explora nuestros programas
+      </Typography>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <ProgramsTabs value={value} onChange={handleChange} aria-label="programs tabs">
+          {dataTabs.map((x, i) => (
+            <Tab key={i} label={x.title} />
           ))}
-        </Stack>
+        </ProgramsTabs>
       </Box>
-  );
-};
+      {dataTabs.map((x, i) => (
+        <TabPanel key={i} value={value} index={i}>
+          {x.content}
+        </TabPanel>
+      ))}
+      <Stack direction={{ xs: "column", sm: "row" }} spacing={{ xs: 1, sm: 2, md: 4 }} justifyContent="center">
+        {dataServices.map((x, i) => (
+          <Card key={i}>
+            <CardActionArea>
+              <CardMedia sx={{ height: 280 }}>
+                <Box position="relative" height="100%" width="100%">
+                  <Image src={x.urlImage} alt={x.title} fill style={{ objectFit: "cover" }} />
+                </Box>
+              </CardMedia>
+              <CardContent>
+                <Typography gutterBottom variant="body2" component="div">
+                  {x.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {x.content}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions sx={{ justifyContent: "center", mb: 2 }}>
+              <Button
+                variant="contained"
+                size="small"
+                color="primary"
+                endIcon={<ArrowForwardIcon />}
+                onClick={() => {
+                  window.location.href = "https://api.whatsapp.com/send?phone=943203772&text=%C2%A1Hola%20Portamor!"
+                }}
+              >
+                Unirse ahora
+              </Button>
+            </CardActions>
+          </Card>
+        ))}
+      </Stack>
+    </Box>
+  )
+}

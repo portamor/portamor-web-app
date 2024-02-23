@@ -1,12 +1,12 @@
-import { Shadows, ThemeOptions, createTheme } from "@mui/material";
-import { Inter } from "next/font/google";
+import { Shadows, ThemeOptions, createTheme } from "@mui/material"
+import { Inter } from "next/font/google"
 
 declare module "@mui/material/styles" {
   export interface PaletteOptions {
     custom: {
-      greyF4: string;
-      black0B: string;
-    };
+      greyF4: string
+      black0B: string
+    }
   }
   export interface Palette {
     custom: {
@@ -22,7 +22,7 @@ export const roboto = Inter({
   subsets: ["latin"],
   display: "swap",
   fallback: ["Helvetica", "Arial", "sans-serif"],
-});
+})
 
 export const getTheme = (): ThemeOptions => {
   const colors = {
@@ -71,9 +71,9 @@ export const getTheme = (): ThemeOptions => {
         },
       },
     },
-  };
-};
+  }
+}
 
-const theme = createTheme(getTheme());
+const theme = createTheme(getTheme())
 
-export default theme;
+export default theme

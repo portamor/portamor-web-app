@@ -1,10 +1,4 @@
-import {
-  Box,
-  BoxProps,
-  Card,
-  CardProps,
-  styled,
-} from "@mui/material";
+import { Box, BoxProps, Card, CardProps, styled } from "@mui/material"
 
 export const BoxBackground = styled(Box)<BoxProps>(({ theme }) => ({
   position: "absolute",
@@ -13,7 +7,7 @@ export const BoxBackground = styled(Box)<BoxProps>(({ theme }) => ({
   background: "rgb(236 225 225 / 30%)",
   top: 0,
   zIndex: 0,
-})) as typeof Box;
+})) as typeof Box
 
 export const CardItem = styled(Card)<CardProps>(({ theme }) => ({
   position: "relative",
@@ -34,7 +28,7 @@ export const CardItem = styled(Card)<CardProps>(({ theme }) => ({
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(5),
   },
-})) as typeof Card;
+})) as typeof Card
 
 export const BoxCircle = styled(Box)<BoxProps>(({ theme }) => ({
   aspectRatio: 1 / 1,
@@ -49,4 +43,4 @@ export const BoxCircle = styled(Box)<BoxProps>(({ theme }) => ({
   zIndex: -1,
   background: theme.palette.custom.pinkF3,
   borderRadius: "50%",
-})) as typeof Box;
+})) as typeof Box

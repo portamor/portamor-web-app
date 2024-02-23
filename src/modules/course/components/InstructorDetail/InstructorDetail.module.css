@@ -16,8 +16,8 @@
   animation-duration: 1s;
 }
 
-@media(max-width: 750px) {
-  .instructor-main{
+@media (max-width: 750px) {
+  .instructor-main {
     width: 340px;
   }
 }

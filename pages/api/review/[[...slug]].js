@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default function handler(req, res) {
-  const { slug } = req.query;
+  const { slug } = req.query
 
   if (!slug) {
-    res.status(200).json({});
+    res.status(200).json({})
     return
   }
 
@@ -20,6 +20,6 @@ export default function handler(req, res) {
           starsValue: 4,
         },
       ],
-    });
+    })
   }
 }

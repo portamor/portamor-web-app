@@ -1,9 +1,9 @@
-import { Box, Grid, Typography } from "@mui/material";
-import Image from "next/image";
-import koica from "@public/accomplishments/koica.png";
-import kunan from "@public/accomplishments/kunan.png";
-import mimp from "@public/accomplishments/mimp.png";
-import movistar from "@public/accomplishments/movistar.png";
+import { Box, Grid, Typography } from "@mui/material"
+import Image from "next/image"
+import koica from "@public/accomplishments/koica.png"
+import kunan from "@public/accomplishments/kunan.png"
+import mimp from "@public/accomplishments/mimp.png"
+import movistar from "@public/accomplishments/movistar.png"
 
 const accomplishments = [
   {
@@ -30,20 +30,19 @@ const accomplishments = [
   {
     title: "Ministerio de la mujer",
     subtitle: "Dirección General de Población, Desarrollo y Voluntariado",
-    content:
-      "Reconocimiento por nuestras acciones de voluntariado a nivel nacional.",
+    content: "Reconocimiento por nuestras acciones de voluntariado a nivel nacional.",
     urlImage: mimp,
   },
-];
+]
 
 export const OurAccomplishments = () => {
   return (
     <Box mt={5}>
       <Typography
-        variant='h4'
-        component='h2'
-        fontWeight={(theme) => theme.typography.fontWeightBold}
-        textAlign='center'
+        variant="h4"
+        component="h2"
+        fontWeight={theme => theme.typography.fontWeightBold}
+        textAlign="center"
         mb={5}
       >
         Nuestro Logros
@@ -51,29 +50,21 @@ export const OurAccomplishments = () => {
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent="center">
         {accomplishments.map((x, i) => (
           <Grid item key={i} xs={3} display="flex">
-            <Box
-              p={2}
-              boxShadow={(theme) => theme.shadows[1]}
-              textAlign='center'
-            >
+            <Box p={2} boxShadow={theme => theme.shadows[1]} textAlign="center">
               <Box height={170}>
-                <Image
-                  src={x.urlImage}
-                  alt={x.title}
-                  style={{ objectFit: "contain", width: "100%" }}
-                />
+                <Image src={x.urlImage} alt={x.title} style={{ objectFit: "contain", width: "100%" }} />
               </Box>
-              <Typography gutterBottom color='primary' mb={2}>
+              <Typography gutterBottom color="primary" mb={2}>
                 {x.title}
               </Typography>
-              <Typography gutterBottom color='text.secondary' mb={2}>
+              <Typography gutterBottom color="text.secondary" mb={2}>
                 {x.subtitle}
               </Typography>
-              <Typography color='text.secondary'>{x.content}</Typography>
+              <Typography color="text.secondary">{x.content}</Typography>
             </Box>
           </Grid>
         ))}
       </Grid>
     </Box>
-  );
-};
+  )
+}

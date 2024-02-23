@@ -8,7 +8,6 @@
   }
 }
 
-
 .course-accordion-summary-content {
   width: 100%;
   display: flex;
@@ -32,13 +31,13 @@
   padding: 20px;
 }
 
-@media(max-width: 769px) {
+@media (max-width: 769px) {
   .course-accordion {
     width: 100%;
   }
 }
 
-.course-accordion h2{
+.course-accordion h2 {
   margin: 0;
 }
 
@@ -46,4 +45,3 @@
   width: 80%;
   font-size: 18px;
 }
-

@@ -1,50 +1,50 @@
 export type Course = {
-  id: string;
-  instructorId: string;
-  userId: string;
-  title: string;
-  description: string;
-  duration: string;
-  level: string;
-  image: string;
-  genre: string;
-  rating: number;
-  materials: string[];
-};
+  id: string
+  instructorId: string
+  userId: string
+  title: string
+  description: string
+  duration: string
+  level: string
+  image: string
+  genre: string
+  rating: number
+  materials: string[]
+}
 
 export type Courses = {
-  courses: Course[];
+  courses: Course[]
   meta: {
-    currentPage: number;
-    pageSize: number;
-    totalCourses: number;
-    totalPages: number;
-  };
-};
+    currentPage: number
+    pageSize: number
+    totalCourses: number
+    totalPages: number
+  }
+}
 
 export type Section = {
-  id: string;
-  name: string;
-  videos: [{ id: string; videoTitle: string }];
-};
+  id: string
+  name: string
+  videos: [{ id: string; videoTitle: string }]
+}
 
 export type User = {
-  id: string;
-  name: string;
-  lastName: string;
-  code: string;
-  birthday: string;
-  admin: boolean;
-};
+  id: string
+  name: string
+  lastName: string
+  code: string
+  birthday: string
+  admin: boolean
+}
 
 export type Instructor = {
-  id: string;
-  name: string;
-  description: string;
-  score: number;
-  profilePicture: string;
-  reviews: number;
-};
+  id: string
+  name: string
+  description: string
+  score: number
+  profilePicture: string
+  reviews: number
+}
 
 export enum ReviewType {
   EXCELENT = "Excelente",
@@ -55,18 +55,18 @@ export enum ReviewType {
 }
 
 export type Review = {
-  id: string;
-  courseId: string; // Revisar xq no se encuentra
-  title: ReviewType;
-  comment: string;
-  starsValue: number;
-};
+  id: string
+  courseId: string // Revisar xq no se encuentra
+  title: ReviewType
+  comment: string
+  starsValue: number
+}
 
 export type CourseVideo = {
-  id: string;
-  videoTitle: string;
-  videoLink: string;
-  videoDescription: string;
-};
+  id: string
+  videoTitle: string
+  videoLink: string
+  videoDescription: string
+}
 
-export type CourseVideoState = {};
+export type CourseVideoState = {}

@@ -1,7 +1,7 @@
-import { api } from "@src/modules/shared/redux/api";
+import { api } from "@src/modules/shared/redux/api"
 
 const extendedApi = api.injectEndpoints({
-  endpoints: (build) => ({
+  endpoints: build => ({
     inscribeUser: build.mutation<{}, { userId: string; courseId: string }>({
       query: ({ userId, courseId }) => ({
         url: `/users/inscription/${userId}/${courseId}`,
@@ -10,6 +10,6 @@ const extendedApi = api.injectEndpoints({
     }),
   }),
   overrideExisting: false,
-});
+})
 
-export const { useInscribeUserMutation } = extendedApi;
+export const { useInscribeUserMutation } = extendedApi

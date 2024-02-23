@@ -1,29 +1,26 @@
-import React from "react";
-import Link from "next/link";
-import { AccordionSummary } from "@mui/material";
-import { Accordion } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import styles from "./CourseAccordion.module.css";
-import { Section } from "@src/modules/shared/models";
-import { PlayCircle } from "react-bootstrap-icons";
+import React from "react"
+import Link from "next/link"
+import { AccordionSummary } from "@mui/material"
+import { Accordion } from "@mui/material"
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
+import styles from "./CourseAccordion.module.css"
+import { Section } from "@src/modules/shared/models"
+import { PlayCircle } from "react-bootstrap-icons"
 
 interface CourseAccordionProps {
-  sections: Section[];
-  courseId: string;
+  sections: Section[]
+  courseId: string
 }
 
 export const CourseAccordion = ({ sections, courseId }: CourseAccordionProps) => {
   return (
     <div>
-      <AccordionSummary
-        className={styles["course-accordion-head"]}
-        style={{ backgroundColor: "#f3f1f1" }}
-      >
+      <AccordionSummary className={styles["course-accordion-head"]} style={{ backgroundColor: "#f3f1f1" }}>
         Contenido del curso
       </AccordionSummary>
 
       {sections &&
-        sections.map((section) => {
+        sections.map(section => {
           return (
             <Accordion key={section.id} className={styles["course-accordion"]}>
               <AccordionSummary
@@ -38,11 +35,8 @@ export const CourseAccordion = ({ sections, courseId }: CourseAccordionProps) =>
               </AccordionSummary>
               <ol>
                 {section.videos &&
-                  section.videos.map((video) => (
-                    <li
-                      key={video.id}
-                      className={styles["course-accordion-li"]}
-                    >
+                  section.videos.map(video => (
+                    <li key={video.id} className={styles["course-accordion-li"]}>
                       <div className={styles["course-accordion-li-div"]}>
                         <Link
                           href={{ pathname: `/clase/${courseId}/${video.id}` }}
@@ -61,8 +55,8 @@ export const CourseAccordion = ({ sections, courseId }: CourseAccordionProps) =>
                   ))}
               </ol>
             </Accordion>
-          );
+          )
         })}
     </div>
-  );
-};
+  )
+}

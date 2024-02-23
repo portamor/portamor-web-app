@@ -1,21 +1,20 @@
-
 export const Validations = {
   number: (value: string | undefined) => {
     if (!value) {
-      return false;
+      return false
     }
     if (/^[0-9]+$/i.test(value)) {
-      return true;
+      return true
     }
-    return false;
+    return false
   },
   alphanumeric: (value: string | undefined) => {
     if (!value) {
-      return false;
+      return false
     }
     if (/^[a-záéíóúÁÉÍÓÚñÑ 0-9]+$/i.test(value)) {
-      return true;
+      return true
     }
-    return false;
+    return false
   },
-};
+}

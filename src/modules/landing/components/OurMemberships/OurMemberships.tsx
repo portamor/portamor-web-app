@@ -1,18 +1,9 @@
-import {
-  Box,
-  Button,
-  Grid,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Typography,
-} from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { BoxBackground, BoxCircle, CardItem } from "./styled";
-import Image from "next/image";
-import icCheck from "@public/icons/ic-check.svg";
-import heart from "@public/heart.png";
+import { Box, Button, Grid, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
+import { BoxBackground, BoxCircle, CardItem } from "./styled"
+import Image from "next/image"
+import icCheck from "@public/icons/ic-check.svg"
+import heart from "@public/heart.png"
 
 export const OurMemberShips = () => {
   const memberships = [
@@ -35,11 +26,7 @@ export const OurMemberShips = () => {
     {
       price: 79,
       title: "Club Plateado",
-      details: [
-        "Conceptos de Club de Bronce",
-        "Diagnóstico",
-        "Acceso a plataforma",
-      ],
+      details: ["Conceptos de Club de Bronce", "Diagnóstico", "Acceso a plataforma"],
     },
     {
       price: 129,
@@ -52,31 +39,27 @@ export const OurMemberShips = () => {
         "Acceso a eventos y actividades exclusivas de impacto social",
       ],
     },
-  ];
+  ]
 
   const transformTitle = (text: string) => {
-    let parts = text.split(" ");
+    let parts = text.split(" ")
     return (
       <>
         {`${parts[0]} `}
-        <Typography
-          variant='inherit'
-          component='span'
-          color={(theme) => theme.palette.primary.main}
-        >
+        <Typography variant="inherit" component="span" color={theme => theme.palette.primary.main}>
           {parts[1]}
         </Typography>
       </>
-    );
-  };
+    )
+  }
 
   return (
     <Box mt={5}>
       <Typography
-        variant='h4'
-        component='h2'
-        fontWeight={(theme) => theme.typography.fontWeightBold}
-        textAlign='center'
+        variant="h4"
+        component="h2"
+        fontWeight={theme => theme.typography.fontWeightBold}
+        textAlign="center"
         mb={5}
       >
         Elige tu membresía favorita
@@ -85,51 +68,41 @@ export const OurMemberShips = () => {
         <BoxCircle />
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent="center">
           {memberships.map((x, i) => (
-            <Grid item key={i} xs={3} textAlign='center' position='relative'>
+            <Grid item key={i} xs={3} textAlign="center" position="relative">
               <CardItem data-important={x.important}>
                 {x.important && (
                   <>
                     <BoxBackground />
-                    <Box
-                      sx={{ zIndex: 1, position: "absolute", right: "5px" }}
-                    >
-                      <Image src={heart} alt='portamor' />
+                    <Box sx={{ zIndex: 1, position: "absolute", right: "5px" }}>
+                      <Image src={heart} alt="portamor" />
                     </Box>
                   </>
                 )}
-                <Box position='relative' zIndex={1} mb={1}>
-                  <Typography
-                    px={2}
-                    variant='h4'
-                    fontWeight={(theme) => theme.typography.fontWeightBold}
-                  >
+                <Box position="relative" zIndex={1} mb={1}>
+                  <Typography px={2} variant="h4" fontWeight={theme => theme.typography.fontWeightBold}>
                     S/. {x.price}
                   </Typography>
-                  <Typography
-                    px={2}
-                    variant='h6'
-                    fontWeight={(theme) => theme.typography.fontWeightBold}
-                  >
+                  <Typography px={2} variant="h6" fontWeight={theme => theme.typography.fontWeightBold}>
                     {transformTitle(x.title)}
                   </Typography>
                 </Box>
                 <List sx={{ flexGrow: 1 }}>
                   {x.details.map((detail, j) => (
-                    <ListItem key={j} alignItems='flex-start'>
+                    <ListItem key={j} alignItems="flex-start">
                       <ListItemAvatar>
-                        <Image src={icCheck} alt='check' />
+                        <Image src={icCheck} alt="check" />
                       </ListItemAvatar>
                       <ListItemText secondary={<>{detail}</>} />
                     </ListItem>
                   ))}
                 </List>
                 <Button
-                  variant='contained'
-                  size='small'
-                  color='primary'
+                  variant="contained"
+                  size="small"
+                  color="primary"
                   endIcon={<ArrowForwardIcon />}
                   onClick={() => {
-                    window.location.href = 'https://api.whatsapp.com/send?phone=943203772&text=%C2%A1Hola%20Portamor!'
+                    window.location.href = "https://api.whatsapp.com/send?phone=943203772&text=%C2%A1Hola%20Portamor!"
                   }}
                 >
                   Elegir este plan
@@ -140,5 +113,5 @@ export const OurMemberShips = () => {
         </Grid>
       </Box>
     </Box>
-  );
-};
+  )
+}

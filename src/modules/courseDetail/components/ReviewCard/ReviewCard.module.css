@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap");
 
 @keyframes opacityin {
   from {
@@ -17,14 +17,14 @@
   padding: 10px 10px 10px;
   margin-bottom: 40px;
   border-radius: 10px;
-  box-shadow: 0px 6px 10px 0.3px #bcbbbb; 
-  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0px 6px 10px 0.3px #bcbbbb;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   animation-name: opacityin;
   animation-duration: 0.5s;
 }
 
-@media(max-width: 750px) {
+@media (max-width: 750px) {
   .review-card {
     width: 340px;
   }
@@ -36,7 +36,7 @@
   max-width: 85px;
   max-height: 80px;
   margin-top: 20px;
-  margin-right: 20px
+  margin-right: 20px;
 }
 
 .info-review-container {
@@ -50,7 +50,7 @@
   align-items: center;
 }
 
-@media(max-width: 750px) {
+@media (max-width: 750px) {
   .head-info-review {
     flex-direction: column;
   }

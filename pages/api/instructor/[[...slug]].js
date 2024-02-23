@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default function handler(req, res) {
-  const { slug } = req.query;
+  const { slug } = req.query
 
   if (!slug) {
-    res.status(200).json({});
+    res.status(200).json({})
     return
   }
 
@@ -19,11 +19,11 @@ export default function handler(req, res) {
         profilePicture: "https://picsum.photos/seed/picsum/80/80",
         reviews: 2,
       },
-    });
+    })
   }
 
   if (slug[0] === "course") {
     // El id viene en slug[1]
-    res.status(200).json({});
+    res.status(200).json({})
   }
 }
