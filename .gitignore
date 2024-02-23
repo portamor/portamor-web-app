@@ -36,3 +36,8 @@ yarn-error.log*
 next-env.d.ts
 
 Migration
+
+# Intellij
+.idea/
+*.iml
+*.iws
