@@ -1,4 +1,4 @@
-import { Box, Button, Container, Link, Stack, Typography } from "@mui/material"
+import { Box, Button, Container, Link, Modal, Stack, Typography } from "@mui/material"
 import {
   Banner,
   FormRegister,
@@ -11,10 +11,65 @@ import {
 import Head from "next/head"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 import Layout from "@src/modules/shared/components/layout"
-import { ReactElement } from "react"
+import { useState } from "react"
 import { OurRecognitions } from "@src/modules/landing/components/OurRecognitions/OurRecognitions"
 
+function MyModal({ open, handleClose }) {
+  return (
+    <Modal
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="video-modal-title"
+      aria-describedby="video-modal-description"
+    >
+      <Box
+        sx={{
+          position: "absolute",
+          width: "90%",
+          maxWidth: 800,
+          bgcolor: "background.paper",
+          border: "3px solid #000",
+          boxShadow: 24,
+          p: 3,
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <Typography id="video-modal-description" sx={{ mt: 2, width: "100%" }}>
+          <div style={{ position: "relative", paddingBottom: "56.25%", width: "100%" }}>
+            <iframe
+              src="https://www.youtube.com/embed/2BYMUkh-jRY?rel=0"
+              title="YouTube video"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </Typography>
+        <Button onClick={handleClose}>Cerrar</Button>
+      </Box>
+    </Modal>
+  )
+}
+
 export default function Home() {
+  const [openModal, setOpenModal] = useState(false)
+
+  const handleOpenModal = () => {
+    setOpenModal(true)
+  }
+
+  const handleCloseModal = () => {
+    setOpenModal(false)
+  }
+
   return (
     <>
       <Head>
@@ -83,11 +138,15 @@ export default function Home() {
               física, mental y social que venimos compartiendo y construyendo con nuestra comunidad portamor.
               <br />
               <Link
-                href="https://www.youtube.com/watch?v=2BYMUkh-jRY&ab_channel=Portamor%F0%9F%92%9FComunidaddeadultosmayores"
+                href=""
                 underline="hover"
                 color="primary"
                 mt={1}
                 display="inline-block"
+                onClick={event => {
+                  event.preventDefault()
+                  handleOpenModal()
+                }}
               >
                 Ver video
               </Link>
@@ -111,10 +170,11 @@ export default function Home() {
         <OurAccomplishments />
         <OurRecognitions />
       </Container>
+      <MyModal open={openModal} handleClose={handleCloseModal} />
     </>
   )
 }
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Home.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>
 }
