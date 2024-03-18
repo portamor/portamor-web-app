@@ -11,10 +11,21 @@ import {
 import Head from "next/head"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 import Layout from "@src/modules/shared/components/layout"
-import { ReactElement } from "react"
+import { useState } from "react"
 import { OurRecognitions } from "@src/modules/landing/components/OurRecognitions/OurRecognitions"
+import ModalVideo from "@src/modules/landing/components/Purpose/ModalVideo"
 
 export default function Home() {
+  const [openModal, setOpenModal] = useState(false)
+
+  const handleOpenModal = () => {
+    setOpenModal(true)
+  }
+
+  const handleCloseModal = () => {
+    setOpenModal(false)
+  }
+
   return (
     <>
       <Head>
@@ -83,11 +94,14 @@ export default function Home() {
               física, mental y social que venimos compartiendo y construyendo con nuestra comunidad portamor.
               <br />
               <Link
-                href="https://www.youtube.com/watch?v=2BYMUkh-jRY&ab_channel=Portamor%F0%9F%92%9FComunidaddeadultosmayores"
+                component="button"
                 underline="hover"
                 color="primary"
                 mt={1}
                 display="inline-block"
+                onClick={event => {
+                  handleOpenModal()
+                }}
               >
                 Ver video
               </Link>
@@ -111,10 +125,11 @@ export default function Home() {
         <OurAccomplishments />
         <OurRecognitions />
       </Container>
+      <ModalVideo open={openModal} handleClose={handleCloseModal} />
     </>
   )
 }
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Home.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>
 }
